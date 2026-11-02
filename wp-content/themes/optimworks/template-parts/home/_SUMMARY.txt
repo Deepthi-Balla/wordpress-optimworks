@@ -1,0 +1,37 @@
+Homepage template-parts conversion summary
+==========================================
+Source: Optimworks Website/src/components/ow/Sections.tsx + Craft.tsx
+Target: wp-content/themes/optimworks/template-parts/home/
+
+Created (14 PHP parts + this summary):
+ 1. quality-loop.php   — QualityLoop (6 phases, rocket rail, static progress for JS)
+ 2. services.php       — Services (6 cards + Functional/Regression spot)
+ 3. accelerators.php   — Accelerators (theTestRo, TestsBuddi)
+ 4. proof.php          — Proof / case-nums cards
+ 5. metrics.php        — Metrics with class="n metric-num" data-count="N"
+ 6. about.php          — About + TrustBadges + office image + IOR
+ 7. why.php            — Why Optimworks
+ 8. engagement.php     — Engagement path (Pilot / Embedded / Managed)
+ 9. industries.php     — Industries wall + CTA tile
+10. proof-quotes.php   — Client logo marquee + 5 quotes (first .on)
+11. finale.php         — Finale CTA + lattice texture backdrop
+12. kinetic-strip.php  — KineticStrip capability marquee
+13. statement.php      — Statement + texture-seam.jpg + word spans
+14. ledger.php         — Risk ledger rows
+
+Conversions applied:
+- Icon components → <svg aria-hidden="true"><use href="#ICON_ID"></use></svg>
+- href="/path" → home_url('/path') with esc_url()
+- CLIENT_LOGOS → get_template_directory_uri()/assets/logos/{file}
+- OFFICE → .../assets/images/office.jpg
+- LatticeBackdrop → .../assets/textures/texture-lattice.jpg
+- Statement SEAM → .../assets/textures/texture-seam.jpg
+- ABSPATH guards; no get_header/get_footer
+
+Omissions / deferred to JS (HTML hooks left in place):
+- QualityLoop rocket launch cycle (data-launch-cycle, data-progress, data-lit)
+- Metrics count-up animation (metric-num + data-count; starts at 0)
+- ProofAndQuotes carousel autoplay / pause / dot clicks (data-quotes, data-quote-dot)
+- Statement word-reveal IntersectionObserver (markup + delays present; class "on" for no-JS visibility)
+- ScrollProgress, SectionRail, useSpotlight from Craft.tsx (not requested as template parts)
+- Icon sprite SVG defs must be output elsewhere (e.g. footer/header) for <use href="#…"> to resolve

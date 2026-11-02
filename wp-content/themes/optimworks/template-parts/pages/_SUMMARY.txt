@@ -1,0 +1,36 @@
+Services / About / Contact page templates — conversion summary
+==============================================================
+Source:
+  Optimworks Website/src/routes/services.index.tsx
+  Optimworks Website/src/routes/about.tsx
+  Optimworks Website/src/routes/contact.tsx
+  (+ assets.ts CLIENT_LOGOS / OFFICE; pageMeta titles skimmed only)
+
+Target: wp-content/themes/optimworks/
+
+Created:
+ 1. page-services.php              — Template Name: Services (hub + 6 pillars + stack + finale)
+ 2. page-about.php                 — Template Name: About (story, IOR, recognition, location, CTA)
+ 3. page-contact.php               — Template Name: Contact (paths, form, sidebar, next steps)
+ 4. template-parts/pages/_SUMMARY.txt
+
+Conversions applied:
+- Icon → <svg aria-hidden="true"><use href="#ICON_ID"></use></svg>
+- href="/path" → esc_url( home_url( '/path' ) )
+- CLIENT_LOGOS → get_template_directory_uri()/assets/logos/{file} (same list as proof-quotes)
+- OFFICE → .../assets/images/office.jpg
+- Section ids preserved (ai-powered-qa, testing-ai-applications, core-qa-services,
+  data-ai-testing, specialized-testing, advisory-services, stack-strip, story, values,
+  recognition, location, paths, pilot, form)
+- Contact #pilot hash → inline JS sets path select to "Pilot Week"
+- Contact submit → composed mailto:info@optimworks.com (same fields/message as React);
+  status UI classes: .hint with idle / mail (and sent if endpoint later); data-status attr
+- ABSPATH guard after Template Name comment; get_header()/get_footer()
+- No IconSprite / Header / Footer / ScrollProgress in page body
+
+Omissions:
+- pageHead() meta / Open Graph / Twitter / canonical (handle via WP SEO or theme head)
+- JSON-LD Service / Organization scripts from route head()
+- React useReveal / useSpotlight hooks (rely on existing site.js reveal/spotlight)
+- VITE_CONTACT_ENDPOINT fetch path — mailto fallback only (no server endpoint wired)
+- Controlled React form state; native inputs + JS instead

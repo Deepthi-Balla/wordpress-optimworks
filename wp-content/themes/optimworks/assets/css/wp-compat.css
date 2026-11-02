@@ -1,0 +1,36 @@
+/* WordPress chrome neutralization — keep layout identical to React reference */
+html{
+  -webkit-text-size-adjust:100%;
+  text-size-adjust:100%;
+  scrollbar-gutter:stable;
+}
+body.ow-site{
+  margin:0;
+  min-width:0;
+  width:100%;
+}
+body.admin-bar{padding-top:0 !important;}
+#wpadminbar{display:none !important;}
+
+/* Keep brand/client images from WP image helpers */
+.brand img,
+.flogo img,
+.clog img,
+.qavatar img,
+.office-frame img{
+  max-width:none;
+}
+.brand img,
+.flogo img{
+  height:52px;
+  width:auto;
+  max-width:none;
+}
+
+/* Avoid accidental WP main/content paddings */
+main,
+.ow-site main{
+  margin:0;
+  padding:0;
+  max-width:none;
+}

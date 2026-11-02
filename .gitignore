@@ -1,0 +1,23 @@
+# WordPress configuration
+wp-config.php
+
+# Environment files
+.env
+.env.*
+
+# Cache and temporary files
+wp-content/cache/
+wp-content/upgrade/
+
+# Backups
+*.sql
+*.sql.gz
+*.zip
+*.tar
+*.gz
+
+# IDE and system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
