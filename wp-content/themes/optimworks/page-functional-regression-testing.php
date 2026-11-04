@@ -187,7 +187,7 @@ $ai_steps = array(
 get_header();
 ow_service_frame_start();
 ?>
-	<div class="service-page fr-enterprise">
+	<div class="service-page fr-enterprise ac-page">
 		<section class="fr-hero">
 			<div class="wrap">
 				<nav class="sv-crumb" aria-label="Breadcrumb">
@@ -249,7 +249,7 @@ ow_service_frame_start();
 					'Teams need coverage tied to business risk, current product behaviour and a clear release recommendation.'
 				);
 				?>
-				<div class="fr-triggers stag reveal">
+				<div class="ac-triggers stag reveal">
 					<?php foreach ( $triggers as $item ) : ?>
 						<article>
 							<span class="fr-trigger-mark" aria-hidden="true">
@@ -488,7 +488,7 @@ ow_service_frame_start();
 					'Start at the level of ownership your release needs.'
 				);
 				?>
-				<div class="fr-engage reveal">
+				<div class="fr-engage ac-engage reveal">
 					<?php foreach ( $engage as $item ) : ?>
 						<article>
 							<span><?php echo esc_html( $item['label'] ); ?></span>

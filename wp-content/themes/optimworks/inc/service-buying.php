@@ -107,34 +107,48 @@ function ow_service_faq( $items ) {
 }
 
 /**
- * LogoBench — tool groups.
+ * Tools pipeline (ac-pipeline) — global service card layout.
  *
  * @param array<int,array{t:string,tools:array<int,array{src?:string,name:string,mark?:string}>}> $groups
  */
-function ow_logo_bench( $groups ) {
+function ow_tool_pipeline( $groups ) {
+	$count = count( $groups );
 	?>
-	<div class="flow-bench reveal">
-		<?php foreach ( $groups as $group ) : ?>
-			<div>
-				<h3><?php echo esc_html( $group['t'] ); ?></h3>
+	<div class="ac-pipeline">
+		<?php
+		foreach ( $groups as $i => $group ) :
+			$n = str_pad( (string) ( $i + 1 ), 2, '0', STR_PAD_LEFT );
+			?>
+			<div class="ac-tool-stage reveal">
+				<h3><span><?php echo esc_html( $n ); ?> / </span><?php echo esc_html( $group['t'] ); ?></h3>
 				<ul>
 					<?php foreach ( $group['tools'] as $item ) : ?>
 						<li>
-							<span class="flow-bench-ico">
-								<?php if ( ! empty( $item['src'] ) ) : ?>
-									<img src="<?php echo esc_url( $item['src'] ); ?>" alt="" />
-								<?php else : ?>
-									<b class="flow-bench-own"><?php echo esc_html( isset( $item['mark'] ) ? $item['mark'] : 'tR' ); ?></b>
-								<?php endif; ?>
-							</span>
+							<?php if ( ! empty( $item['src'] ) ) : ?>
+								<img src="<?php echo esc_url( $item['src'] ); ?>" alt="" loading="lazy" />
+							<?php else : ?>
+								<b class="flow-bench-own"><?php echo esc_html( isset( $item['mark'] ) ? $item['mark'] : 'tR' ); ?></b>
+							<?php endif; ?>
 							<span><?php echo esc_html( $item['name'] ); ?></span>
 						</li>
 					<?php endforeach; ?>
 				</ul>
+				<?php if ( $i < $count - 1 ) : ?>
+					<span class="ac-pipeline-arrow" aria-hidden="true"><?php echo ow_icon( 'i-arrow' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+				<?php endif; ?>
 			</div>
 		<?php endforeach; ?>
 	</div>
 	<?php
+}
+
+/**
+ * LogoBench — alias of ow_tool_pipeline for existing callers.
+ *
+ * @param array<int,array{t:string,tools:array<int,array{src?:string,name:string,mark?:string}>}> $groups
+ */
+function ow_logo_bench( $groups ) {
+	ow_tool_pipeline( $groups );
 }
 
 /**
@@ -206,16 +220,37 @@ function ow_accelerator_callout( $c ) {
 }
 
 /**
- * Scope grid (au-scope).
+ * Trigger cards (ac-triggers).
+ *
+ * @param array<int,array{icon:string,title:string,text:string}> $items
+ */
+function ow_triggers_grid( $items ) {
+	?>
+	<div class="ac-triggers stag reveal">
+		<?php foreach ( $items as $item ) : ?>
+			<article>
+				<span class="fr-trigger-mark" aria-hidden="true">
+					<?php echo ow_icon( $item['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				</span>
+				<h3><?php echo esc_html( $item['title'] ); ?></h3>
+				<p><?php echo esc_html( $item['text'] ); ?></p>
+			</article>
+		<?php endforeach; ?>
+	</div>
+	<?php
+}
+
+/**
+ * Scope grid (ac-scope card layout).
  *
  * @param array<int,array{icon:string,title:string,text:string,output:string}> $items
  */
 function ow_scope_grid( $items ) {
 	?>
-	<div class="au-scope reveal">
+	<div class="ac-scope stag reveal">
 		<?php foreach ( $items as $item ) : ?>
 			<article>
-				<span class="au-scope-icon">
+				<span class="ac-card-icon">
 					<?php echo ow_icon( $item['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				</span>
 				<h3><?php echo esc_html( $item['title'] ); ?></h3>
@@ -228,20 +263,15 @@ function ow_scope_grid( $items ) {
 }
 
 /**
- * Delivery model (au-delivery).
+ * Delivery model (ac-delivery cards, no index column).
  *
  * @param array<int,array{phase:string,owner:string,text:string,output:string}> $items
  */
 function ow_delivery_model( $items ) {
 	?>
-	<ol class="au-delivery reveal">
-		<?php
-		$index = 0;
-		foreach ( $items as $item ) :
-			$index++;
-			?>
-			<li>
-				<span class="au-delivery-index"><?php echo esc_html( str_pad( (string) $index, 2, '0', STR_PAD_LEFT ) ); ?></span>
+	<ol class="ac-delivery">
+		<?php foreach ( $items as $item ) : ?>
+			<li class="reveal">
 				<div class="au-delivery-copy">
 					<span><?php echo esc_html( $item['owner'] ); ?></span>
 					<h3><?php echo esc_html( $item['phase'] ); ?></h3>
@@ -254,6 +284,25 @@ function ow_delivery_model( $items ) {
 			</li>
 		<?php endforeach; ?>
 	</ol>
+	<?php
+}
+
+/**
+ * Engagement option cards (ac-engage).
+ *
+ * @param array<int,array{label:string,title:string,text:string}> $items
+ */
+function ow_engage_cards( $items ) {
+	?>
+	<div class="au-engage ac-engage reveal">
+		<?php foreach ( $items as $item ) : ?>
+			<article>
+				<span><?php echo esc_html( $item['label'] ); ?></span>
+				<h3><?php echo esc_html( $item['title'] ); ?></h3>
+				<p><?php echo esc_html( $item['text'] ); ?></p>
+			</article>
+		<?php endforeach; ?>
+	</div>
 	<?php
 }
 
@@ -278,7 +327,7 @@ function ow_render_service_buying_page( $p ) {
 
 	ow_service_frame_start();
 	?>
-	<div class="service-page fr-enterprise au-enterprise">
+	<div class="service-page fr-enterprise au-enterprise ac-page">
 		<section class="fr-hero">
 			<div class="wrap">
 				<nav class="sv-crumb" aria-label="Breadcrumb">
@@ -323,7 +372,7 @@ function ow_render_service_buying_page( $p ) {
 					</div>
 					<figure class="fr-hero-art an d3">
 						<?php
-						if ( ! empty( $p['heroVisual'] ) && 'aitc' === $p['heroVisual'] ) {
+						if ( ! empty( $p['heroVisual'] ) && 'aitc' === $p['heroVisual'] && function_exists( 'ow_aitc_hero_visual' ) ) {
 							ow_aitc_hero_visual( isset( $p['imageAlt'] ) ? $p['imageAlt'] : '' );
 						} else {
 							ow_service_visual(
@@ -346,18 +395,8 @@ function ow_render_service_buying_page( $p ) {
 					isset( $p['triggerTitle'] ) ? $p['triggerTitle'] : '',
 					isset( $p['triggerText'] ) ? $p['triggerText'] : null
 				);
+				ow_triggers_grid( isset( $p['triggers'] ) ? $p['triggers'] : array() );
 				?>
-				<div class="fr-triggers stag reveal">
-					<?php foreach ( ( isset( $p['triggers'] ) ? $p['triggers'] : array() ) as $item ) : ?>
-						<article>
-							<span class="fr-trigger-mark" aria-hidden="true">
-								<?php echo ow_icon( $item['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-							</span>
-							<h3><?php echo esc_html( $item['title'] ); ?></h3>
-							<p><?php echo esc_html( $item['text'] ); ?></p>
-						</article>
-					<?php endforeach; ?>
-				</div>
 			</div>
 		</section>
 
@@ -472,7 +511,7 @@ function ow_render_service_buying_page( $p ) {
 					isset( $p['ecoTitle'] ) ? $p['ecoTitle'] : '',
 					isset( $p['ecoText'] ) ? $p['ecoText'] : null
 				);
-				ow_logo_bench( isset( $p['tools'] ) ? $p['tools'] : array() );
+				ow_tool_pipeline( isset( $p['tools'] ) ? $p['tools'] : array() );
 				if ( isset( $p['extra'] ) ) {
 					if ( is_callable( $p['extra'] ) ) {
 						call_user_func( $p['extra'] );
@@ -486,16 +525,10 @@ function ow_render_service_buying_page( $p ) {
 
 		<section class="band">
 			<div class="wrap">
-				<?php ow_flow_head( '07', 'How to start', isset( $p['engageTitle'] ) ? $p['engageTitle'] : '' ); ?>
-				<div class="au-engage reveal">
-					<?php foreach ( ( isset( $p['engage'] ) ? $p['engage'] : array() ) as $item ) : ?>
-						<article>
-							<span><?php echo esc_html( $item['label'] ); ?></span>
-							<h3><?php echo esc_html( $item['title'] ); ?></h3>
-							<p><?php echo esc_html( $item['text'] ); ?></p>
-						</article>
-					<?php endforeach; ?>
-				</div>
+				<?php
+				ow_flow_head( '07', 'How to start', isset( $p['engageTitle'] ) ? $p['engageTitle'] : '' );
+				ow_engage_cards( isset( $p['engage'] ) ? $p['engage'] : array() );
+				?>
 			</div>
 		</section>
 

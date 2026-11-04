@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'OW_THEME_VERSION', '1.0.4' );
+define( 'OW_THEME_VERSION', '1.0.6' );
 
 require_once get_template_directory() . '/inc/service-buying.php';
 require_once get_template_directory() . '/inc/aitc-hero.php';
@@ -95,24 +95,27 @@ function ow_enqueue_assets() {
 add_action( 'wp_enqueue_scripts', 'ow_enqueue_assets' );
 
 /**
- * Layered hero sequence for the AI assisted test case page only.
+ * Global service card / pipeline experience styles (ac-page).
+ * Hero cycle JS remains scoped to AI assisted test case generation.
  */
-function ow_enqueue_aitc_hero() {
+function ow_enqueue_service_experience() {
 	if ( ! is_page() ) {
 		return;
 	}
+
+	$css = get_template_directory() . '/assets/css/service-experience.css';
+	wp_enqueue_style(
+		'ow-service-experience',
+		get_template_directory_uri() . '/assets/css/service-experience.css',
+		array( 'ow-theme' ),
+		file_exists( $css ) ? (string) filemtime( $css ) : OW_THEME_VERSION
+	);
+
 	$post = get_queried_object();
 	if ( ! $post || empty( $post->post_name ) || 'ai-assisted-test-case-generation' !== $post->post_name ) {
 		return;
 	}
-	$css = get_template_directory() . '/assets/css/aitc-hero.css';
-	$js  = get_template_directory() . '/assets/js/aitc-hero.js';
-	wp_enqueue_style(
-		'ow-aitc-hero',
-		get_template_directory_uri() . '/assets/css/aitc-hero.css',
-		array( 'ow-theme' ),
-		file_exists( $css ) ? (string) filemtime( $css ) : OW_THEME_VERSION
-	);
+	$js = get_template_directory() . '/assets/js/aitc-hero.js';
 	wp_enqueue_script(
 		'ow-aitc-hero',
 		get_template_directory_uri() . '/assets/js/aitc-hero.js',
@@ -121,7 +124,7 @@ function ow_enqueue_aitc_hero() {
 		true
 	);
 }
-add_action( 'wp_enqueue_scripts', 'ow_enqueue_aitc_hero' );
+add_action( 'wp_enqueue_scripts', 'ow_enqueue_service_experience' );
 
 /**
  * Preconnect for Google Fonts (same as React).

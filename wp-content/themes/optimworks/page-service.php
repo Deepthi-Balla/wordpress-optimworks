@@ -32,5 +32,9 @@ if ( ! $p ) :
 	return;
 endif;
 
-ow_render_service_buying_page( $p );
+if ( 'ai-assisted-test-case-generation' === $slug && function_exists( 'ow_render_ai_case_experience' ) ) {
+	ow_render_ai_case_experience( $p );
+} else {
+	ow_render_service_buying_page( $p );
+}
 get_footer();

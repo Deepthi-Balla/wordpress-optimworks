@@ -163,7 +163,7 @@ $engage = array(
 get_header();
 ow_service_frame_start();
 ?>
-	<div class="service-page fr-enterprise au-enterprise">
+	<div class="service-page fr-enterprise au-enterprise ac-page">
 		<section class="fr-hero">
 			<div class="wrap">
 				<nav class="sv-crumb" aria-label="Breadcrumb">
@@ -226,7 +226,7 @@ ow_service_frame_start();
 					'Teams need focused checks of agreed access controls, sessions and configuration, supported by reproducible findings.'
 				);
 				?>
-				<div class="fr-triggers stag reveal">
+				<div class="ac-triggers stag reveal">
 					<?php foreach ( $triggers as $item ) : ?>
 						<article>
 							<span class="fr-trigger-mark" aria-hidden="true">
@@ -250,10 +250,10 @@ ow_service_frame_start();
 					'The service covers selected access controls, session behaviour, configuration and misuse cases. Functional Testing covers expected journeys and API Testing covers contracts.'
 				);
 				?>
-				<div class="au-scope reveal">
+				<div class="ac-scope stag reveal">
 					<?php foreach ( $scope as $item ) : ?>
 						<article>
-							<span class="au-scope-icon">
+							<span class="ac-card-icon">
 								<?php echo ow_icon( $item['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							</span>
 							<h3><?php echo esc_html( $item['title'] ); ?></h3>
@@ -284,10 +284,9 @@ ow_service_frame_start();
 					'Each phase has a named owner and an output your security owner can inspect.'
 				);
 				?>
-				<ol class="au-delivery reveal">
+				<ol class="ac-delivery">
 					<?php foreach ( $delivery as $i => $item ) : ?>
-						<li>
-							<span class="au-delivery-index"><?php echo esc_html( str_pad( (string) ( $i + 1 ), 2, '0', STR_PAD_LEFT ) ); ?></span>
+						<li class="reveal">
 							<div class="au-delivery-copy">
 								<span><?php echo esc_html( $item['owner'] ); ?></span>
 								<h3><?php echo esc_html( $item['phase'] ); ?></h3>
@@ -430,7 +429,7 @@ ow_service_frame_start();
 					'Start with a high risk application surface.'
 				);
 				?>
-				<div class="au-engage reveal">
+				<div class="au-engage ac-engage reveal">
 					<?php foreach ( $engage as $item ) : ?>
 						<article>
 							<span><?php echo esc_html( $item['label'] ); ?></span>

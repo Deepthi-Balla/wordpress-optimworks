@@ -43,7 +43,7 @@ $faq = array(
 get_header();
 ow_service_frame_start();
 ?>
-	<div class="service-page fr-enterprise au-enterprise">
+	<div class="service-page fr-enterprise au-enterprise ac-page">
 		<section class="fr-hero">
 			<div class="wrap">
 				<nav class="sv-crumb" aria-label="Breadcrumb">
@@ -108,7 +108,7 @@ ow_service_frame_start();
 					'The tools support test design, execution and release evidence while engineers remain responsible for product context and recommendations.'
 				);
 				?>
-				<div class="fr-triggers stag reveal">
+				<div class="ac-triggers stag reveal">
 					<article>
 						<span class="fr-trigger-mark" aria-hidden="true">
 							<?php echo ow_icon( 'i-users' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
@@ -221,9 +221,8 @@ ow_service_frame_start();
 					'A governed path from source material to reviewed tests, execution evidence and a release recommendation.'
 				);
 				?>
-				<ol class="au-delivery reveal">
-					<li>
-						<span class="au-delivery-index">01</span>
+				<ol class="ac-delivery">
+					<li class="reveal">
 						<div class="au-delivery-copy">
 							<span>TestsBuddi</span>
 							<h3>Understand</h3>
@@ -234,8 +233,7 @@ ow_service_frame_start();
 							<b>Intake map</b>
 						</div>
 					</li>
-					<li>
-						<span class="au-delivery-index">02</span>
+					<li class="reveal">
 						<div class="au-delivery-copy">
 							<span>Experienced engineer</span>
 							<h3>Review</h3>
@@ -246,8 +244,7 @@ ow_service_frame_start();
 							<b>Approved cases</b>
 						</div>
 					</li>
-					<li>
-						<span class="au-delivery-index">03</span>
+					<li class="reveal">
 						<div class="au-delivery-copy">
 							<span>theTestRo</span>
 							<h3>Automate</h3>
@@ -258,8 +255,7 @@ ow_service_frame_start();
 							<b>Runnable pack</b>
 						</div>
 					</li>
-					<li>
-						<span class="au-delivery-index">04</span>
+					<li class="reveal">
 						<div class="au-delivery-copy">
 							<span>Named engineer</span>
 							<h3>Review evidence</h3>
