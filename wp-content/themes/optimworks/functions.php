@@ -9,9 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'OW_THEME_VERSION', '1.0.6' );
+define( 'OW_THEME_VERSION', '1.0.8' );
 
 require_once get_template_directory() . '/inc/service-buying.php';
+require_once get_template_directory() . '/inc/service-workflow.php';
 require_once get_template_directory() . '/inc/aitc-hero.php';
 require_once get_template_directory() . '/inc/site-bits.php';
 require_once get_template_directory() . '/inc/industries-data.php';
@@ -95,8 +96,7 @@ function ow_enqueue_assets() {
 add_action( 'wp_enqueue_scripts', 'ow_enqueue_assets' );
 
 /**
- * Global service card / pipeline experience styles (ac-page).
- * Hero cycle JS remains scoped to AI assisted test case generation.
+ * Global service card styles + shared ServiceWorkflow hero.
  */
 function ow_enqueue_service_experience() {
 	if ( ! is_page() ) {
@@ -111,14 +111,18 @@ function ow_enqueue_service_experience() {
 		file_exists( $css ) ? (string) filemtime( $css ) : OW_THEME_VERSION
 	);
 
-	$post = get_queried_object();
-	if ( ! $post || empty( $post->post_name ) || 'ai-assisted-test-case-generation' !== $post->post_name ) {
-		return;
-	}
-	$js = get_template_directory() . '/assets/js/aitc-hero.js';
+	$workflow_css = get_template_directory() . '/assets/css/service-workflow.css';
+	wp_enqueue_style(
+		'ow-service-workflow',
+		get_template_directory_uri() . '/assets/css/service-workflow.css',
+		array( 'ow-theme' ),
+		file_exists( $workflow_css ) ? (string) filemtime( $workflow_css ) : OW_THEME_VERSION
+	);
+
+	$js = get_template_directory() . '/assets/js/service-workflow.js';
 	wp_enqueue_script(
-		'ow-aitc-hero',
-		get_template_directory_uri() . '/assets/js/aitc-hero.js',
+		'ow-service-workflow',
+		get_template_directory_uri() . '/assets/js/service-workflow.js',
 		array(),
 		file_exists( $js ) ? (string) filemtime( $js ) : OW_THEME_VERSION,
 		true

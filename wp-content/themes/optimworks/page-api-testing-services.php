@@ -209,7 +209,7 @@ ow_service_frame_start();
 						</div>
 					</div>
 					<figure class="fr-hero-art an d3">
-						<?php ow_service_visual( $ow_img . '/api-testing-concept.jpg', 'API path from contract and auth through handoff and schema to a readiness verdict' ); ?>
+						<?php ow_service_workflow_hero( 'api-testing-concept.jpg', 'API path from contract and auth through handoff and schema to a readiness verdict' ); ?>
 					</figure>
 				</div>
 			</div>

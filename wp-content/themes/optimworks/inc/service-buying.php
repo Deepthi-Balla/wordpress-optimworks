@@ -372,14 +372,15 @@ function ow_render_service_buying_page( $p ) {
 					</div>
 					<figure class="fr-hero-art an d3">
 						<?php
-						if ( ! empty( $p['heroVisual'] ) && 'aitc' === $p['heroVisual'] && function_exists( 'ow_aitc_hero_visual' ) ) {
-							ow_aitc_hero_visual( isset( $p['imageAlt'] ) ? $p['imageAlt'] : '' );
-						} else {
-							ow_service_visual(
-								isset( $p['image'] ) ? $p['image'] : '',
-								isset( $p['imageAlt'] ) ? $p['imageAlt'] : ''
-							);
-						}
+						ow_service_workflow_hero(
+							isset( $p['image'] ) ? $p['image'] : '',
+							isset( $p['imageAlt'] ) ? $p['imageAlt'] : '',
+							array(
+								'delivery' => isset( $p['delivery'] ) ? $p['delivery'] : array(),
+								'coreName' => ! empty( $p['poweredBy']['name'] ) ? $p['poweredBy']['name'] : 'Optimworks',
+								'coreSub'  => 'Delivery live',
+							)
+						);
 						?>
 					</figure>
 				</div>

@@ -228,7 +228,7 @@ ow_service_frame_start();
 						</div>
 					</div>
 					<figure class="fr-hero-art an d3">
-						<?php ow_service_visual( $ow_img . '/automation-testing-concept.jpg?v=2', 'Automation path from approve and build through run and evidence to a CI gate' ); ?>
+						<?php ow_service_workflow_hero( 'automation-testing-concept.jpg', 'Automation path from approve and build through run and evidence to a CI gate' ); ?>
 					</figure>
 				</div>
 			</div>

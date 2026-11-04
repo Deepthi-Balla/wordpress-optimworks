@@ -209,7 +209,7 @@ ow_service_frame_start();
 						</div>
 					</div>
 					<figure class="fr-hero-art an d3">
-						<?php ow_service_visual( $ow_img . '/accessibility-testing-concept.jpg', 'Accessibility path from audit and keyboard through screen reader and contrast to a named conformance report' ); ?>
+						<?php ow_service_workflow_hero( 'accessibility-testing-concept.jpg', 'Accessibility path from audit and keyboard through screen reader and contrast to a named conformance report' ); ?>
 					</figure>
 				</div>
 			</div>

@@ -209,7 +209,7 @@ ow_service_frame_start();
 						</div>
 					</div>
 					<figure class="fr-hero-art an d3">
-						<?php ow_service_visual( $ow_img . '/performance-testing-concept.jpg', 'Performance path from baseline and load through stress and soak to a readiness verdict' ); ?>
+						<?php ow_service_workflow_hero( 'performance-testing-concept.jpg', 'Performance path from baseline and load through stress and soak to a readiness verdict' ); ?>
 					</figure>
 				</div>
 			</div>

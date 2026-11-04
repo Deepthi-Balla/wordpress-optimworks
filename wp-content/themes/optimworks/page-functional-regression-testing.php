@@ -233,7 +233,7 @@ ow_service_frame_start();
 						</div>
 					</div>
 					<figure class="fr-hero-art an d3">
-						<?php ow_service_visual( $ow_img . '/functional-testing-concept.jpg', 'Functional, integration, regression and API testing progressing towards release readiness' ); ?>
+						<?php ow_service_workflow_hero( 'functional-testing-concept.jpg', 'Functional, integration, regression and API testing progressing towards release readiness' ); ?>
 					</figure>
 				</div>
 			</div>

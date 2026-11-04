@@ -210,7 +210,7 @@ ow_service_frame_start();
 						</div>
 					</div>
 					<figure class="fr-hero-art an d3">
-						<?php ow_service_visual( $ow_img . '/security-testing-concept.jpg', 'Security path from agreed scope and surface map through authorised exercise and evidence to a named report' ); ?>
+						<?php ow_service_workflow_hero( 'security-testing-concept.jpg', 'Security path from agreed scope and surface map through authorised exercise and evidence to a named report' ); ?>
 					</figure>
 				</div>
 			</div>
