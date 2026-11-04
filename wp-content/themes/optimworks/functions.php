@@ -71,25 +71,28 @@ function ow_enqueue_assets() {
 		null
 	);
 
+	$theme_css = get_template_directory() . '/assets/css/optimworks.css';
 	wp_enqueue_style(
 		'ow-theme',
 		get_template_directory_uri() . '/assets/css/optimworks.css',
 		array( 'ow-google-fonts' ),
-		OW_THEME_VERSION
+		file_exists( $theme_css ) ? (string) filemtime( $theme_css ) : OW_THEME_VERSION
 	);
 
+	$compat_css = get_template_directory() . '/assets/css/wp-compat.css';
 	wp_enqueue_style(
 		'ow-wp-compat',
 		get_template_directory_uri() . '/assets/css/wp-compat.css',
 		array( 'ow-theme' ),
-		OW_THEME_VERSION
+		file_exists( $compat_css ) ? (string) filemtime( $compat_css ) : OW_THEME_VERSION
 	);
 
+	$site_js = get_template_directory() . '/assets/js/site.js';
 	wp_enqueue_script(
 		'ow-site',
 		get_template_directory_uri() . '/assets/js/site.js',
 		array(),
-		OW_THEME_VERSION,
+		file_exists( $site_js ) ? (string) filemtime( $site_js ) : OW_THEME_VERSION,
 		true
 	);
 }
