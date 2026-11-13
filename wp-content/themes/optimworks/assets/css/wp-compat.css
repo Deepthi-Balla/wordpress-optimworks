@@ -26,6 +26,9 @@ body.admin-bar{padding-top:0 !important;}
   width:auto;
   max-width:none;
 }
+footer.ofx .flogo img{
+  height:46px;
+}
 
 /* Avoid accidental WP main/content paddings */
 main,

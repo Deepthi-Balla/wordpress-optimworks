@@ -34,17 +34,24 @@ $ow_office = get_template_directory_uri() . '/assets/images/office.jpg';
 			</a>
 		</div>
 		<div class="reveal">
-			<div class="office-frame">
+			<a
+				class="office-frame"
+				href="https://www.google.com/maps/search/?api=1&amp;query=<?php echo rawurlencode( "1st Floor, Jain Sadguru Image's Capital Park, Unit-106B, Madhapur, Hyderabad, Telangana 500081, India" ); ?>"
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label="Open Capital Park, Madhapur, Hyderabad in Google Maps"
+			>
 				<img
 					src="<?php echo esc_url( $ow_office ); ?>"
-					alt="Optimworks Technologies office at Capital Park, Madhapur, Hyderabad"
+					alt=""
+					aria-hidden="true"
 					loading="lazy"
 				/>
 				<div class="office-tag">
 					<span class="eyebrow">Headquarters</span>
 					<p>Capital Park, Madhapur, Hyderabad</p>
 				</div>
-			</div>
+			</a>
 			<div class="ior-compact">
 				<div class="ior-pill">
 					<span class="iorL">I</span>

@@ -12,7 +12,44 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $ow_logos_uri = get_template_directory_uri() . '/assets/logos';
-$ow_office    = get_template_directory_uri() . '/assets/images/office.jpg';
+$ow_images    = get_template_directory_uri() . '/assets/images';
+$ow_office    = $ow_images . '/office.jpg';
+$ow_linkedin  = 'https://www.linkedin.com/company/optimworks';
+
+$ow_leaders = array(
+	array(
+		'name'     => 'Vikas Reddy Voladri',
+		'role'     => 'Co-founder & CEO',
+		'tag'      => 'Founder',
+		'bio'      => 'Started Optimworks in 2019 and works directly with clients on scoping, test strategy and release decisions.',
+		'photo'    => 'lead-founder-1.jpg',
+		'linkedin' => $ow_linkedin,
+	),
+	array(
+		'name'     => 'Suresh Salloju',
+		'role'     => 'Co-founder & CTO',
+		'tag'      => 'Founder',
+		'bio'      => 'Leads the engineering side of delivery — automation frameworks, accelerators and the technical approach behind each engagement.',
+		'photo'    => 'lead-founder-2.jpg',
+		'linkedin' => $ow_linkedin,
+	),
+	array(
+		'name'     => 'Ananya Rao',
+		'role'     => 'Head of Sales',
+		'tag'      => 'Leadership',
+		'bio'      => 'First point of contact for new clients. Handles enquiries, scoping calls and the commercial side of engagements.',
+		'photo'    => 'lead-sales.jpg',
+		'linkedin' => $ow_linkedin,
+	),
+	array(
+		'name'     => 'Priyanka Nair',
+		'role'     => 'Head of Human Resources',
+		'tag'      => 'Leadership',
+		'bio'      => 'Runs hiring, onboarding and people practices for the Hyderabad team, and keeps the culture engineer-led as the company grows.',
+		'photo'    => 'lead-hr.jpg',
+		'linkedin' => $ow_linkedin,
+	),
+);
 
 $ow_client_logos = array(
 	array( 'file' => 't-rowe-price.png', 'name' => 'T. Rowe Price' ),
@@ -107,6 +144,49 @@ get_header();
 						<span class="sf-lbl">Client satisfaction</span>
 					</div>
 				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- LEADERSHIP -->
+	<section class="band" id="leadership">
+		<div class="wrap">
+			<div class="sec-head reveal">
+				<span class="eyebrow">Leadership</span>
+				<h2>The people behind the work.</h2>
+				<p>
+					Optimworks is led by its founders, with sales and people functions running
+					alongside delivery.
+				</p>
+			</div>
+			<div class="lead-grid stag reveal">
+				<?php foreach ( $ow_leaders as $leader ) : ?>
+				<article class="lead-card">
+					<div class="lead-photo">
+						<img
+							src="<?php echo esc_url( $ow_images . '/' . $leader['photo'] ); ?>"
+							alt="<?php echo esc_attr( $leader['name'] . ', ' . $leader['role'] . ' at Optimworks' ); ?>"
+							loading="lazy"
+							width="768"
+							height="960"
+						/>
+						<span class="lead-tag"><?php echo esc_html( $leader['tag'] ); ?></span>
+					</div>
+					<div class="lead-body">
+						<h3><?php echo esc_html( $leader['name'] ); ?></h3>
+						<span class="lead-role"><?php echo esc_html( $leader['role'] ); ?></span>
+						<p><?php echo esc_html( $leader['bio'] ); ?></p>
+						<a
+							class="lead-in"
+							href="<?php echo esc_url( $leader['linkedin'] ); ?>"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<svg aria-hidden="true"><use href="#i-in"></use></svg> LinkedIn profile
+						</a>
+					</div>
+				</article>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>
@@ -283,10 +363,17 @@ get_header();
 						</div>
 					</div>
 				</div>
-				<div class="office-frame">
+				<a
+					class="office-frame"
+					href="https://www.google.com/maps/search/?api=1&amp;query=<?php echo rawurlencode( "1st Floor, Jain Sadguru Image's Capital Park, Unit-106B, Madhapur, Hyderabad, Telangana 500081, India" ); ?>"
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="Open Capital Park, Madhapur, Hyderabad in Google Maps"
+				>
 					<img
 						src="<?php echo esc_url( $ow_office ); ?>"
-						alt="Capital Park building, Madhapur, Hyderabad. Optimworks headquarters."
+						alt=""
+						aria-hidden="true"
 						loading="lazy"
 					/>
 					<div class="office-tag">
@@ -294,7 +381,7 @@ get_header();
 						<p>Capital Park, Madhapur, Hyderabad</p>
 						<small>Unit-106B, 1st Floor, Telangana 500081</small>
 					</div>
-				</div>
+				</a>
 			</div>
 		</div>
 	</section>
