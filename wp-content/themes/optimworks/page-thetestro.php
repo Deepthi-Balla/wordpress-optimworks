@@ -55,7 +55,7 @@ $p = array(
 		'href'  => '/accelerators',
 	),
 	'kicker'       => 'AI Accelerators',
-	'title'        => 'Accelerate testing without writing <span class="hl">code</span>',
+	'title'        => 'No-Code Test Automation Platform for Web and API Testing',
 	'signalIcon'   => 'i-gear',
 	'signal'       => array( 'No code', 'No LLM', 'Web and API' ),
 	'lede'         => "theTestRo is Optimworks' in house no code test automation platform. Teams record journeys, replay them across environments, validate web and APIs together and keep suites stable with self healing. Execution is deterministic and rules based rather than dependent on an LLM.",

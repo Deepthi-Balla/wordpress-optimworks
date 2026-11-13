@@ -47,7 +47,7 @@ $p = array(
 		'href'  => '/accelerators',
 	),
 	'kicker'       => 'AI Accelerators',
-	'title'        => 'From existing artefacts to a signed release <span class="hl">signal</span>',
+	'title'        => 'AI Test Management Platform with Human Approval and Release Gates',
 	'signalIcon'   => 'i-bot',
 	'signal'       => array( 'Intake mapped', 'Human approved', 'Never silent' ),
 	'lede'         => 'Drafts from what you already have. A living knowledge base. A person still moves a case from draft to approved. Scripts never run silently.',

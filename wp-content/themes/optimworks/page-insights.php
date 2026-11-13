@@ -71,7 +71,7 @@ get_header();
 				<span>/</span>
 				<span>Insights</span>
 			</nav>
-			<h1>Information for teams evaluating Optimworks.</h1>
+			<h1>Insights for Teams Evaluating a QA Testing Partner</h1>
 			<p class="lede">
 				Explore our engagement models, in house accelerators, verified case study metrics and answers to common questions.
 			</p>

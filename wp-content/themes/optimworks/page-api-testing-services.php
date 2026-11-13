@@ -177,7 +177,7 @@ ow_service_frame_start();
 					<div class="fr-hcopy">
 						<div class="kicker an d1">Core QA Services</div>
 						<h1 class="an d2">
-							API testing at the service <span class="hl">boundary</span>
+							Best API Testing Services
 						</h1>
 						<div class="fr-ai-signal an d3">
 							<?php echo ow_icon( 'i-cloud' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>

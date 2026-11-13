@@ -47,7 +47,7 @@ $p = array(
 		'href'  => '/accelerators',
 	),
 	'kicker'      => 'AI Accelerators',
-	'title'       => 'We run the QA cadence. You keep the <span class="hl">repos</span>',
+	'title'       => 'Managed QA Services: We Run the QA Cadence, You Keep the Repos',
 	'signalIcon'  => 'i-users',
 	'signal'      => array( 'Cadence owned', 'Git yours', 'Named sign off' ),
 	'lede'        => 'Managed means we own an agreed QA cadence on your product. Git stays yours. A named experienced engineer still owns the release recommendation.',

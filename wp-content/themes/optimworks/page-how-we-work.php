@@ -40,7 +40,7 @@ get_header();
 				<span>/</span>
 				<span>How We Work</span>
 			</nav>
-			<h1>Pilot Week, embedded team or a managed QA function.</h1>
+			<h1>QA Engagement Models: Pilot Week, Embedded Team or Managed QA</h1>
 			<p class="lede">
 				Choose a focused starting point, add quality engineering capacity to your delivery
 				team or ask Optimworks to manage an agreed QA scope.

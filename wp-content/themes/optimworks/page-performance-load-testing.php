@@ -177,7 +177,7 @@ ow_service_frame_start();
 					<div class="fr-hcopy">
 						<div class="kicker an d1">Core QA Services</div>
 						<h1 class="an d2">
-							Performance testing for your expected <span class="hl">demand</span>
+							Performance Testing Services
 						</h1>
 						<div class="fr-ai-signal an d3">
 							<?php echo ow_icon( 'i-gauge' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>

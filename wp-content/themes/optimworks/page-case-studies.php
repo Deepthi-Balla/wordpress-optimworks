@@ -24,7 +24,7 @@ ow_page_hero(
 			array( 'label' => 'Case Studies' ),
 		)
 	),
-	'Three delivered engagements. Real numbers. No client names.',
+	'Test Automation Case Studies: Real Numbers, No Client Names',
 	'Case studies are anonymised. The metrics are from work we delivered. Named quotes appear only in testimonials where we had permission to use them. The public logo wall is not attribution for these studies.'
 );
 ?>

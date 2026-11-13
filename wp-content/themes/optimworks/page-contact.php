@@ -22,7 +22,7 @@ get_header();
 				<span>/</span>
 				<span>Contact</span>
 			</nav>
-			<h1>Book an Enterprise Audit or a free Pilot Week.</h1>
+			<h1>Book an Enterprise QA Audit or a Free Pilot Week</h1>
 			<p class="lede">
 				Start with a structured review of your current quality position or a focused week on
 				an agreed product area. Tell us what you are shipping, the risks you are managing and

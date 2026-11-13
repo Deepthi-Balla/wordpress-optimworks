@@ -24,7 +24,7 @@ ow_page_hero(
 			array( 'label' => 'Industries' ),
 		)
 	),
-	'Quality assurance shaped around industry risk.',
+	'Industry-Specific QA Testing Services Shaped Around Industry Risk',
 	'We help teams in financial services, healthcare, retail, supply chain and education test the journeys their customers, staff and regulators depend on.'
 );
 ?>

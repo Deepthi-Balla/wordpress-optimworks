@@ -55,7 +55,7 @@ ow_service_frame_start();
 					<div class="fr-hcopy">
 						<div class="kicker an d1">AI Accelerators</div>
 						<h1 class="an d2">
-							In house tools that support quality <span class="hl">engineering</span>
+							AI-Powered QA Tools Built In-House: theTestRo and TestsBuddi
 						</h1>
 						<div class="fr-ai-signal an d3">
 							<?php echo ow_icon( 'i-tools' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>

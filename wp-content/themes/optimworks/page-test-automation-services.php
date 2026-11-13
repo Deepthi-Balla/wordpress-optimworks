@@ -196,7 +196,7 @@ ow_service_frame_start();
 					<div class="fr-hcopy">
 						<div class="kicker an d1">Core QA Services</div>
 						<h1 class="an d2">
-							Test automation that survives <span class="hl">product change</span>
+							Test Automation Services That Survive Product Change
 						</h1>
 						<div class="fr-ai-signal an d3">
 							<?php echo ow_icon( 'i-gear' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>

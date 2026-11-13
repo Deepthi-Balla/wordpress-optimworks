@@ -26,8 +26,7 @@ $ow_inputs = array(
 				</div>
 
 				<h1 class="an d2">
-					The Unified Quality Layer for Modern <span class="hl">Enterprise &amp; AI</span>
-					Engineering
+					AI-Augmented QA Testing Services Company
 				</h1>
 				<p class="hero-sub an d3">
 					AI-augmented QA and AI engineering under one accountable team. From legacy core

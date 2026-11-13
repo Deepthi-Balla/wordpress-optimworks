@@ -129,7 +129,7 @@ get_header();
 				<span>/</span>
 				<span>FAQ</span>
 			</nav>
-			<h1>Answers on AI, how we work and the facts we publish.</h1>
+			<h1>QA Testing Company FAQs: AI, Engagement Models and Company Facts</h1>
 			<p class="lede">
 				Clear information about our use of AI, engagement models, public evidence and company
 				details.

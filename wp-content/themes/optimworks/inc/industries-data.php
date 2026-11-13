@@ -23,11 +23,11 @@ function ow_industries_data() {
 	$data = array(
 		'financial-services' => array(
 			'crumb'     => 'Financial Services',
-			'pageTitle' => 'Financial Services QA | Optimworks',
-			'pageDesc'  => 'Quality assurance for financial software, covering payments, portfolios, reporting, integrations and control evidence.',
+			'pageTitle' => 'Financial Services Software Testing | Payments QA',
+			'pageDesc'  => 'Financial services software testing for payments, portfolios, reporting and APIs, with traceable evidence and a release recommendation. Free pilot week.',
 			'image'     => 'financial-services-concept.jpg',
 			'imageAlt'  => 'Payment, portfolio, API and control checks supporting a release review',
-			'title'     => 'Quality assurance for financial products and critical transactions.',
+			'title'     => 'Software Testing Services for Financial Industry',
 			'lede'      => 'We test payments, portfolios, reporting and connected services with attention to customer outcomes, financial controls and operational resilience.',
 			'journeys'  => array(
 				array(
@@ -112,11 +112,11 @@ function ow_industries_data() {
 		),
 		'healthcare'         => array(
 			'crumb'     => 'Healthcare',
-			'pageTitle' => 'Healthcare QA | Optimworks',
-			'pageDesc'  => 'Quality assurance for healthcare software, covering records, telehealth, patient services, interoperability, privacy and accessibility.',
+			'pageTitle' => 'Healthcare Software Testing Services | Telehealth QA',
+			'pageDesc'  => 'Healthcare software testing services for health records, telehealth and patient portals: accuracy, interoperability and privacy. Start a free pilot week.',
 			'image'     => 'healthcare-concept.jpg',
 			'imageAlt'  => 'Record, integration, privacy and access checks supporting a release review',
-			'title'     => 'Quality assurance for connected healthcare services.',
+			'title'     => 'Healthcare Software Testing Services',
 			'lede'      => 'We test health records, telehealth, patient portals and medical technology for functional accuracy, dependable integration, privacy and accessibility.',
 			'journeys'  => array(
 				array(
@@ -201,11 +201,11 @@ function ow_industries_data() {
 		),
 		'ecommerce-retail'   => array(
 			'crumb'     => 'eCommerce and Retail',
-			'pageTitle' => 'eCommerce and Retail QA | Optimworks',
-			'pageDesc'  => 'Quality assurance for retail and ecommerce across catalogue, checkout, payments, promotions, fulfilment and peak demand.',
+			'pageTitle' => 'eCommerce Testing Services | Checkout & Retail QA',
+			'pageDesc'  => 'eCommerce testing services for catalogue, cart, checkout, payments and promotions, with peak-season performance checks. Start a free pilot week today.',
 			'image'     => 'ecommerce-retail-concept.jpg',
 			'imageAlt'  => 'Catalogue, cart, payment and peak demand checks supporting a release review',
-			'title'     => 'Quality assurance from product discovery to fulfilment.',
+			'title'     => 'eCommerce Testing Services',
 			'lede'      => 'We test catalogue, cart, checkout, payments, promotions and fulfilment across websites, applications and the services behind them.',
 			'journeys'  => array(
 				array(
@@ -290,11 +290,11 @@ function ow_industries_data() {
 		),
 		'supply-chain'       => array(
 			'crumb'     => 'Supply Chain',
-			'pageTitle' => 'Supply Chain QA | Optimworks',
-			'pageDesc'  => 'Quality assurance for supply chain software across orders, inventory, warehouse operations, transport and partner integrations.',
+			'pageTitle' => 'Supply Chain Software Testing | WMS & EDI QA',
+			'pageDesc'  => 'Supply chain software testing for orders, inventory, warehouse and transport integrations, with traceable evidence. Start a free pilot week with us today.',
 			'image'     => 'supply-chain-concept.jpg',
 			'imageAlt'  => 'Order, inventory, integration and routing checks supporting a release review',
-			'title'     => 'Quality assurance across connected supply chain operations.',
+			'title'     => 'Software Testing Services for Supply Chain',
 			'lede'      => 'We test orders, inventory, warehouse workflows, transport and partner integrations across the systems that support physical operations.',
 			'journeys'  => array(
 				array(
@@ -379,11 +379,11 @@ function ow_industries_data() {
 		),
 		'education'          => array(
 			'crumb'     => 'Education',
-			'pageTitle' => 'Education QA | Optimworks',
-			'pageDesc'  => 'Quality assurance for education software across enrolment, learning content, assessments, accessibility and peak demand.',
+			'pageTitle' => 'Education Software Testing Services | LMS & eLearning',
+			'pageDesc'  => 'Education software testing services for learning platforms: enrolment, access, content, assessments and accessibility. Start a free pilot week with us.',
 			'image'     => 'education-concept.jpg',
 			'imageAlt'  => 'Identity, content, assessment and access checks supporting a release review',
-			'title'     => 'Quality assurance for learning platforms and education services.',
+			'title'     => 'Software Testing Services for Education industry',
 			'lede'      => 'We test enrolment, identity, learning content, assessments and access across the systems used by learners, educators and administrators.',
 			'journeys'  => array(
 				array(

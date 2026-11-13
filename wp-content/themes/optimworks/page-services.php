@@ -40,7 +40,7 @@ get_header();
 				<span>/</span>
 				<span>Services</span>
 			</nav>
-			<h1>Quality engineering for complex products and releases.</h1>
+			<h1>QA Testing Services for Complex Products, Releases &amp; AI Systems</h1>
 			<p class="lede">
 				Six specialist practices covering core software, APIs, performance, application
 				security, data and AI systems. Each engagement has a clear scope, practical

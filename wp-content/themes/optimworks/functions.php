@@ -18,6 +18,7 @@ require_once get_template_directory() . '/inc/site-bits.php';
 require_once get_template_directory() . '/inc/industries-data.php';
 require_once get_template_directory() . '/inc/case-studies-data.php';
 require_once get_template_directory() . '/inc/services-data.php';
+require_once get_template_directory() . '/inc/seo-data.php';
 
 /**
  * Theme supports.
