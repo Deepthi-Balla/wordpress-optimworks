@@ -2742,10 +2742,10 @@ function ow_services_data() {
 			'closeLink'      => 'Or discuss the current apps',
 		),
 		'agile-continuous-testing' => array(
-			'wp_title'       => 'Agile and Continuous Testing',
+			'wp_title'       => 'Agile and Continuous Testing services',
 			'crumb'          => 'Agile testing',
 			'kicker'         => 'Core QA Services',
-			'title'          => 'Testing inside the sprint, not after <span class="hl">it</span>',
+			'title'          => 'Agile and Continuous Testing services',
 			'signalIcon'     => 'i-compass',
 			'signal'         => array( 'Stories ranked', 'Work visible', 'Gate signed' ),
 			'lede'           => 'QA integrated with your delivery cadence, with risk based scope, evidence in your existing tools and a clear recommendation at the release gate.',
