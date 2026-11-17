@@ -14,40 +14,35 @@ if ( ! defined( 'ABSPATH' ) ) {
 $ow_logos_uri = get_template_directory_uri() . '/assets/logos';
 $ow_images    = get_template_directory_uri() . '/assets/images';
 $ow_office    = $ow_images . '/office.jpg';
-$ow_linkedin  = 'https://www.linkedin.com/company/optimworks';
 
 $ow_leaders = array(
 	array(
-		'name'     => 'Vikas Reddy Voladri',
-		'role'     => 'Co-founder & CEO',
-		'tag'      => 'Founder',
-		'bio'      => 'Started Optimworks in 2019 and works directly with clients on scoping, test strategy and release decisions.',
-		'photo'    => 'lead-founder-1.jpg',
-		'linkedin' => $ow_linkedin,
-	),
-	array(
 		'name'     => 'Suresh Salloju',
-		'role'     => 'Co-founder & CTO',
+		'role'     => 'Founder | Business Strategy, Technology & Innovation',
 		'tag'      => 'Founder',
-		'bio'      => 'Leads the engineering side of delivery — automation frameworks, accelerators and the technical approach behind each engagement.',
-		'photo'    => 'lead-founder-2.jpg',
-		'linkedin' => $ow_linkedin,
+		'photo'    => 'lead-suresh.jpg',
+		'linkedin' => 'https://www.linkedin.com/in/suresh-salloju-039a0a59/',
 	),
 	array(
-		'name'     => 'Ananya Rao',
-		'role'     => 'Head of Sales',
-		'tag'      => 'Leadership',
-		'bio'      => 'First point of contact for new clients. Handles enquiries, scoping calls and the commercial side of engagements.',
-		'photo'    => 'lead-sales.jpg',
-		'linkedin' => $ow_linkedin,
+		'name'     => 'Vikas Reddy Voladri',
+		'role'     => 'Co-Founder | Business Strategy, Technology & Innovation',
+		'tag'      => 'Co-Founder',
+		'photo'    => 'lead-vikas.jpg',
+		'linkedin' => 'https://www.linkedin.com/in/vikas-reddy-voladri-52ab5468/',
 	),
 	array(
-		'name'     => 'Priyanka Nair',
-		'role'     => 'Head of Human Resources',
-		'tag'      => 'Leadership',
-		'bio'      => 'Runs hiring, onboarding and people practices for the Hyderabad team, and keeps the culture engineer-led as the company grows.',
-		'photo'    => 'lead-hr.jpg',
-		'linkedin' => $ow_linkedin,
+		'name'     => 'Srilaxmi Martha',
+		'role'     => 'Head of Hiring | Human Resources & Talent Acquisition',
+		'tag'      => 'Head of Hiring',
+		'photo'    => 'lead-srilaxmi.jpg',
+		'linkedin' => 'https://www.linkedin.com/in/martha-srilaxmi-b47b4859/',
+	),
+	array(
+		'name'     => 'Srikanth Nagamalla',
+		'role'     => 'Head of Sales | Business Development & Client Partnerships',
+		'tag'      => 'Head of Sales',
+		'photo'    => 'lead-srikanth.jpg',
+		'linkedin' => 'https://www.linkedin.com/in/srikanthnagamalla/',
 	),
 );
 
@@ -175,15 +170,16 @@ get_header();
 					<div class="lead-body">
 						<h3><?php echo esc_html( $leader['name'] ); ?></h3>
 						<span class="lead-role"><?php echo esc_html( $leader['role'] ); ?></span>
-						<p><?php echo esc_html( $leader['bio'] ); ?></p>
+						<?php if ( ! empty( $leader['linkedin'] ) ) : ?>
 						<a
 							class="lead-in"
 							href="<?php echo esc_url( $leader['linkedin'] ); ?>"
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<svg aria-hidden="true"><use href="#i-in"></use></svg> LinkedIn profile
+							<svg aria-hidden="true"><use href="#i-in"></use></svg> View LinkedIn Profile
 						</a>
+						<?php endif; ?>
 					</div>
 				</article>
 				<?php endforeach; ?>
