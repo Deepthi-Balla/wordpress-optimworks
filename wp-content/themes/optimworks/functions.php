@@ -135,6 +135,76 @@ function ow_enqueue_service_experience() {
 add_action( 'wp_enqueue_scripts', 'ow_enqueue_service_experience' );
 
 /**
+ * Contact page → Contact Form 7 REST submit (same pipeline as old Optimworks).
+ *
+ * Deploy target: replace UI on the same domain (optimworks.com).
+ * - Form ID 237702 already exists there.
+ * - reCAPTCHA site key already allows optimworks.com.
+ * - Existing CF7 Mail settings already email management.
+ *
+ * Local (.local): still posts to live optimworks.com form 237702 for end-to-end testing.
+ */
+function ow_enqueue_contact_form() {
+	if ( ! is_page_template( 'page-contact.php' ) && ! is_page( 'contact' ) ) {
+		return;
+	}
+
+	$form_id  = 237702;
+	$site_key = '6Ld7rh0gAAAAABUCOzsyKjjuXHwtIVw8ku3KS-rO';
+	$host     = (string) wp_parse_url( home_url(), PHP_URL_HOST );
+	$is_local = in_array( $host, array( 'localhost', '127.0.0.1' ), true )
+		|| false !== strpos( $host, '.local' );
+
+	if ( $is_local ) {
+		// Local theme preview → live CF7 on optimworks.com.
+		$endpoint       = 'https://optimworks.com/wp-json/contact-form-7/v1/contact-forms/237702/feedback';
+		$container_post = 30;
+		$unit_tag       = 'wpcf7-f237702-p30-o1';
+	} else {
+		// Deployed on optimworks.com (same site / same domain).
+		$container_post = (int) get_queried_object_id();
+		if ( $container_post < 1 ) {
+			$container_post = 30;
+		}
+		$unit_tag = sprintf( 'wpcf7-f%d-p%d-o1', $form_id, $container_post );
+		$endpoint = esc_url_raw( rest_url( 'contact-form-7/v1/contact-forms/' . $form_id . '/feedback' ) );
+	}
+
+	$contact_js = get_template_directory() . '/assets/js/contact-form.js';
+	wp_enqueue_script(
+		'ow-contact-form',
+		get_template_directory_uri() . '/assets/js/contact-form.js',
+		array(),
+		file_exists( $contact_js ) ? (string) filemtime( $contact_js ) : OW_THEME_VERSION,
+		true
+	);
+
+	wp_localize_script(
+		'ow-contact-form',
+		'owContactForm',
+		array(
+			'formId'           => $form_id,
+			'endpoint'         => $endpoint,
+			'unitTag'          => $unit_tag,
+			'containerPost'    => $container_post,
+			'cf7Version'       => '5.7.4',
+			'recaptchaSiteKey' => $site_key,
+			'requireCaptcha'   => '1',
+			'isLocal'          => $is_local ? '1' : '',
+		)
+	);
+
+	wp_enqueue_script(
+		'ow-recaptcha',
+		'https://www.google.com/recaptcha/api.js?onload=owCf7LoadRecaptcha&render=explicit',
+		array( 'ow-contact-form' ),
+		null,
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', 'ow_enqueue_contact_form' );
+
+/**
  * Preconnect for Google Fonts (same as React).
  */
 function ow_font_preconnect() {

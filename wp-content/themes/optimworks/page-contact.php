@@ -129,16 +129,33 @@ get_header();
 							/>
 						</div>
 					</div>
-					<div>
-						<label for="company">Company name</label>
-						<input
-							id="company"
-							name="company"
-							type="text"
-							placeholder="Acme Corp"
-							required
-							autocomplete="organization"
-						/>
+					<div class="form-row">
+						<div>
+							<label for="company">Company name</label>
+							<input
+								id="company"
+								name="company"
+								type="text"
+								placeholder="Acme Corp"
+								required
+								autocomplete="organization"
+							/>
+						</div>
+						<div>
+							<label for="phone">Mobile number</label>
+							<input
+								id="phone"
+								name="phone"
+								type="tel"
+								inputmode="numeric"
+								pattern="[0-9]{10}"
+								maxlength="10"
+								minlength="10"
+								placeholder="9876543210"
+								required
+								autocomplete="tel-national"
+							/>
+						</div>
 					</div>
 					<div>
 						<label for="path">Which path?</label>
@@ -158,6 +175,9 @@ get_header();
 							required
 							placeholder="Tell us about your technology, what is being shipped and the quality challenge you want to address."
 						></textarea>
+					</div>
+					<div class="form-recaptcha" aria-label="Captcha">
+						<div id="ow-recaptcha" class="ow-recaptcha"></div>
 					</div>
 					<button
 						class="btn btn-brand"
@@ -280,69 +300,5 @@ get_header();
 		</div>
 	</section>
 </main>
-<script>
-(function () {
-	var form = document.getElementById('contact-form');
-	var pathSelect = document.getElementById('path');
-	var submitBtn = document.getElementById('contact-submit');
-	var hint = document.getElementById('contact-hint');
-	if (!form || !pathSelect || !submitBtn || !hint) return;
-
-	var idleHint = hint.innerHTML;
-	var status = 'idle';
-
-	function setStatus(next, email) {
-		status = next;
-		submitBtn.disabled = status === 'sending' || status === 'sent';
-		if (status === 'sending') {
-			submitBtn.innerHTML = 'Sending <svg aria-hidden="true"><use href="#i-arrow"></use></svg>';
-		} else {
-			submitBtn.innerHTML = 'Send to the team <svg aria-hidden="true"><use href="#i-arrow"></use></svg>';
-		}
-		hint.setAttribute('data-status', status);
-		if (status === 'sent') {
-			hint.setAttribute('role', 'status');
-			hint.textContent = 'Thank you. We have received your enquiry and will reply to ' + email + '.';
-		} else if (status === 'mail') {
-			hint.setAttribute('role', 'status');
-			hint.innerHTML = 'Your message has been prepared. If your email client did not open, send it to <a href="mailto:info@optimworks.com">info@optimworks.com</a>.';
-		} else {
-			hint.removeAttribute('role');
-			hint.innerHTML = idleHint;
-		}
-	}
-
-	function applyPilotHash() {
-		if (window.location.hash.replace('#', '') === 'pilot') {
-			pathSelect.value = 'Pilot Week';
-		}
-	}
-	applyPilotHash();
-	window.addEventListener('hashchange', applyPilotHash);
-
-	form.addEventListener('submit', function (e) {
-		e.preventDefault();
-		var name = (form.elements.namedItem('name') || {}).value || '';
-		var email = (form.elements.namedItem('email') || {}).value || '';
-		var company = (form.elements.namedItem('company') || {}).value || '';
-		var path = pathSelect.value || 'Enterprise Audit';
-		var message = (form.elements.namedItem('message') || {}).value || '';
-
-		setStatus('sending', email);
-
-		var composed =
-			'Name: ' + name + '\n' +
-			'Email: ' + email + '\n' +
-			'Company: ' + company + '\n' +
-			'Path: ' + path + '\n\n' +
-			message;
-
-		var subject = encodeURIComponent('[' + path + '] from ' + company);
-		var body = encodeURIComponent(composed);
-		window.location.href = 'mailto:info@optimworks.com?subject=' + subject + '&body=' + body;
-		setStatus('mail', email);
-	});
-})();
-</script>
 <?php
 get_footer();

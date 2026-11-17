@@ -37,3 +37,30 @@ main,
   padding:0;
   max-width:none;
 }
+
+/* Contact form: CF7 status + validation affordances (layout unchanged) */
+.form input.is-invalid,
+.form select.is-invalid,
+.form textarea.is-invalid{
+  border-color:var(--brand);
+}
+.form .form-recaptcha{
+  margin-top:2px;
+  display:flex;
+  justify-content:center;
+  width:100%;
+}
+.form .ow-recaptcha{
+  display:inline-block;
+}
+.form .ow-recaptcha.is-invalid{
+  outline:2px solid var(--brand);
+  outline-offset:4px;
+  border-radius:4px;
+}
+.form .hint[data-status="sent"]{
+  color:var(--fg-2);
+}
+.form .hint[data-status="error"]{
+  color:var(--brand-600);
+}
