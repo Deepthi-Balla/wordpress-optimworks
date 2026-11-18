@@ -279,7 +279,6 @@ if ( null === $ow_active_pillar ) {
 								</span>
 								<span class="mtab-txt">
 									<b><?php echo esc_html( $col['head'] ); ?></b>
-									<small><?php echo esc_html( $col['blurb'] ); ?></small>
 								</span>
 								<svg class="mtab-caret" aria-hidden="true"><use href="#i-chev"></use></svg>
 							</button>
