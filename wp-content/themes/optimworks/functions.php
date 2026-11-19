@@ -107,6 +107,15 @@ function ow_enqueue_service_experience() {
 		return;
 	}
 
+	if ( is_page( 'ai-assisted-test-case-generation' ) ) {
+		wp_enqueue_style(
+			'ow-aitc-problem-font',
+			'https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&display=swap',
+			array( 'ow-google-fonts' ),
+			null
+		);
+	}
+
 	$css = get_template_directory() . '/assets/css/service-experience.css';
 	wp_enqueue_style(
 		'ow-service-experience',

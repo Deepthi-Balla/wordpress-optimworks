@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 500" fill="none">
+<defs>
+  <linearGradient id="band" x1="90" y1="420" x2="390" y2="35" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#ff6a0a" stop-opacity="0"/>
+    <stop offset=".28" stop-color="#ff710d" stop-opacity=".92"/>
+    <stop offset=".62" stop-color="#ff9a54" stop-opacity=".38"/>
+    <stop offset="1" stop-color="#ffb17c" stop-opacity=".05"/>
+  </linearGradient>
+  <linearGradient id="bubble" x1="95" y1="100" x2="300" y2="360" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#fff" stop-opacity=".96"/>
+    <stop offset=".62" stop-color="#fff7f3" stop-opacity=".86"/>
+    <stop offset="1" stop-color="#ffd8c4" stop-opacity=".72"/>
+  </linearGradient>
+  <linearGradient id="orange" x1="185" y1="160" x2="280" y2="330" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#ff8b19"/><stop offset="1" stop-color="#e94b00"/>
+  </linearGradient>
+  <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="12"/>
+    <feOffset dy="12"/>
+    <feComponentTransfer><feFuncA type="linear" slope=".18"/></feComponentTransfer>
+    <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <filter id="soft" x="-30%" y="-30%" width="160%" height="170%">
+    <feGaussianBlur stdDeviation="22"/>
+  </filter>
+</defs>
+<path d="M72 500 350 0h210L280 500H72Z" fill="url(#band)"/>
+<path d="M165 80 380 0h180L276 252 165 80Z" fill="#ffb17c" opacity=".10" filter="url(#soft)"/>
+<!-- Main question speech bubble -->
+<g filter="url(#shadow)" transform="rotate(8 214 235)">
+  <path d="M113 92Q116 53 157 53h167q43 0 43 43v168q0 43-43 43H206l-49 43q-12 10-12-7v-42q-39-8-39-48V92Z" fill="url(#bubble)" stroke="#fff" stroke-width="5"/>
+  <path d="M132 87q5-22 29-22h151q33 0 33 34v151q0 32-33 32H186q-39 0-39-39V99q0-8-15-12Z" stroke="#fff" stroke-opacity=".62" stroke-width="4"/>
+  <path d="M229 156q-1-30 30-30 33 0 33 31 0 19-18 35-18 16-18 39" stroke="url(#orange)" stroke-width="25" stroke-linecap="round"/>
+  <circle cx="258" cy="265" r="13" fill="url(#orange)"/>
+</g>
+<!-- Secondary message bubble -->
+<g filter="url(#shadow)" transform="rotate(-5 365 340)">
+  <path d="M315 275q0-35 35-35h116q35 0 35 35v119q0 35-35 35h-67l-39 31q-11 9-11-6v-27q-34-6-34-38V275Z" fill="url(#bubble)" stroke="#fff" stroke-width="5"/>
+  <path d="M343 268q8-17 27-17h91q26 0 26 27v99q0 27-27 27h-91q-27 0-27-27V268Z" stroke="#fff" stroke-opacity=".62" stroke-width="4"/>
+  <circle cx="371" cy="329" r="12" fill="#f4d9ce"/>
+  <circle cx="412" cy="329" r="12" fill="#f4d9ce"/>
+  <circle cx="453" cy="329" r="12" fill="#f4d9ce"/>
+</g>
+</svg>

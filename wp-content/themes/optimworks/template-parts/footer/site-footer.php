@@ -1,6 +1,6 @@
 <?php
 /**
- * Site footer (from Footer.tsx).
+ * Site footer.
  *
  * @package OptimWorks
  */
@@ -8,168 +8,111 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$ow_logo_dark  = get_template_directory_uri() . '/assets/logos/logo-dark-bg.png';
-$ow_logo_light = get_template_directory_uri() . '/assets/logos/logo-light-bg.png';
-$ow_linkedin   = 'https://www.linkedin.com/company/optimworks';
-
-$ow_cols = array(
+$ow_footer_columns = array(
 	array(
-		'title' => 'Services',
-		'icon'  => 'i-gear',
-		'split' => 2,
+		'label' => 'Services',
 		'links' => array(
-			array( 'href' => '/services', 'label' => 'All QA services' ),
-			array( 'href' => '/services/functional-regression-testing', 'label' => 'Functional testing' ),
-			array( 'href' => '/services/test-automation-services', 'label' => 'Automation testing' ),
-			array( 'href' => '/services/mobile-app-testing', 'label' => 'Mobile testing' ),
-			array( 'href' => '/services/performance-load-testing', 'label' => 'Performance testing' ),
-			array( 'href' => '/services/api-testing-services', 'label' => 'API testing' ),
-			array( 'href' => '/services/security-penetration-testing', 'label' => 'Security testing' ),
-			array( 'href' => '/services/accessibility-testing', 'label' => 'Accessibility testing' ),
-			array( 'href' => '/services/agile-continuous-testing', 'label' => 'Agile testing' ),
-			array( 'href' => '/services/ai-generated-code-validation', 'label' => 'AI code validation' ),
+			array( 'All QA Services', '/services' ),
+			array( 'Functional Testing', '/services/functional-regression-testing' ),
+			array( 'Automation Testing', '/services/test-automation-services' ),
+			array( 'Mobile Testing', '/services/mobile-app-testing' ),
+			array( 'Performance Testing', '/services/performance-load-testing' ),
+			array( 'API Testing', '/services/api-testing-services' ),
+			array( 'Security Testing', '/services/security-penetration-testing' ),
+			array( 'Agile Testing', '/services/agile-continuous-testing' ),
+			array( 'AI Code Validation', '/services/ai-generated-code-validation' ),
 		),
 	),
 	array(
-		'title' => 'Platform',
-		'icon'  => 'i-bot',
+		'label' => 'Platform',
 		'links' => array(
-			array( 'href' => '/accelerators', 'label' => 'AI Accelerators' ),
-			array( 'href' => '/thetestro', 'label' => 'theTestRo' ),
-			array( 'href' => '/testsbuddi', 'label' => 'TestsBuddi' ),
-			array( 'href' => '/ai-managed-qa', 'label' => 'AI Managed QA' ),
-			array( 'href' => '/how-we-work', 'label' => 'How we work' ),
+			array( 'AI Accelerators', '/accelerators' ),
+			array( 'theTestRo', '/thetestro' ),
+			array( 'TestsBudd(i)', '/testsbuddi' ),
+			array( 'AI Managed QA', '/ai-managed-qa' ),
 		),
 	),
 	array(
-		'title' => 'Company',
-		'icon'  => 'i-bank',
+		'label' => 'Industries',
 		'links' => array(
-			array( 'href' => '/about', 'label' => 'About' ),
-			array( 'href' => '/industries', 'label' => 'Industries' ),
-			array( 'href' => '/case-studies', 'label' => 'Case Studies' ),
-			array( 'href' => '/insights', 'label' => 'Insights' ),
-			array( 'href' => '/faq', 'label' => 'FAQ' ),
+			array( 'All Industries', '/industries' ),
+			array( 'Financial Services', '/industries/financial-services' ),
+			array( 'Healthcare', '/industries/healthcare' ),
+			array( 'eCommerce & Retail', '/industries/ecommerce-retail' ),
+			array( 'Supply Chain', '/industries/supply-chain' ),
+			array( 'Education', '/industries/education' ),
 		),
 	),
 	array(
-		'title'  => 'Contact',
-		'icon'   => 'i-arrow',
-		'social' => true,
-		'links'  => array(
-			array( 'href' => '/contact', 'label' => 'Request an Audit' ),
-			array( 'href' => '/contact#pilot', 'label' => 'Pilot Week' ),
-			array( 'href' => 'mailto:info@optimworks.com', 'label' => 'info@optimworks.com' ),
+		'label' => 'Explore',
+		'links' => array(
+			array( 'About Us', '/about' ),
+			array( 'How We Work', '/how-we-work' ),
+			array( 'Case Studies', '/case-studies' ),
+			array( 'Insights', '/insights' ),
+			array( 'FAQ', '/faq' ),
+			array( 'Contact Us', '/contact' ),
 		),
 	),
 );
-
-$ow_stats = array(
-	array( '100+', 'clients' ),
-	array( '20+', 'countries' ),
-	array( '150+', 'projects' ),
-	array( '95%', 'client satisfaction' ),
-);
-
-/**
- * Split a column the same way Footer.tsx lists() does.
- *
- * @param array $col Column config.
- * @return array<int, array<int, array<string, mixed>>>
- */
-$ow_footer_lists = static function ( $col ) use ( $ow_linkedin ) {
-	$links = $col['links'];
-	if ( ! empty( $col['social'] ) ) {
-		$links[] = array(
-			'href'  => $ow_linkedin,
-			'label' => 'LinkedIn',
-			'soc'   => true,
-		);
-	}
-	$split = isset( $col['split'] ) ? (int) $col['split'] : 1;
-	if ( $split < 2 ) {
-		return array( $links );
-	}
-	$per  = (int) ceil( count( $links ) / $split );
-	$out  = array();
-	for ( $i = 0; $i < $split; $i++ ) {
-		$out[] = array_slice( $links, $i * $per, $per );
-	}
-	return $out;
-};
+$ow_footer_waves = get_template_directory_uri() . '/assets/images/optimworks-footer-waves.svg';
+$ow_footer_linkedin = 'https://www.linkedin.com/company/optimworks';
 ?>
-<footer class="ofx">
-	<svg class="ofx-wave" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
-		<?php for ( $ow_i = 0; $ow_i < 14; $ow_i++ ) : ?>
-			<path d="M0 <?php echo (int) ( 150 + $ow_i * 4 ); ?> C 300 <?php echo (int) ( 330 + $ow_i * 3 ); ?>, 520 <?php echo (int) ( 120 + $ow_i * 2 ); ?>, 860 <?php echo (int) ( 250 - $ow_i * 2 ); ?> S 1300 <?php echo (int) ( 100 + $ow_i * 4 ); ?>, 1440 <?php echo (int) ( 130 + $ow_i * 3 ); ?>" />
-		<?php endfor; ?>
-	</svg>
-	<div class="wrap">
-		<div class="ofx-top">
-			<div class="ofx-brand">
-				<span class="flogo">
-					<img class="lg-dark" src="<?php echo esc_url( $ow_logo_dark ); ?>" alt="Optimworks" />
-					<img class="lg-light" src="<?php echo esc_url( $ow_logo_light ); ?>" alt="" aria-hidden="true" />
-				</span>
-				<p class="fdesc">
-					IOR-QA™ means Innovative, Optimized and Reliable. Named engineers use governed
-					automation to test releases and document the recommendation. Founded 2019, Madhapur,
-					Hyderabad.
-				</p>
+<footer class="ow-footer">
+	<div class="ow-footer__inner">
+		<div class="ow-footer__columns">
+			<?php foreach ( $ow_footer_columns as $ow_footer_column ) : ?>
+				<nav class="ow-footer__column" aria-label="<?php echo esc_attr( $ow_footer_column['label'] ); ?>">
+					<h2><?php echo esc_html( strtoupper( $ow_footer_column['label'] ) ); ?></h2>
+					<ul>
+						<?php foreach ( $ow_footer_column['links'] as $ow_footer_link ) : ?>
+							<li><a href="<?php echo esc_url( home_url( $ow_footer_link[1] ) ); ?>"><?php echo esc_html( $ow_footer_link[0] ); ?></a></li>
+						<?php endforeach; ?>
+					</ul>
+				</nav>
+			<?php endforeach; ?>
+
+			<div class="ow-footer__column ow-footer__contact">
+				<h2>CONTACT</h2>
+				<address>1st Floor, Jain Sadguru Image's Capital Park<br />Unit-106B, Madhapur, Hyderabad<br />Telangana 500081, India</address>
+				<a class="ow-footer__contact-link" href="mailto:info@optimworks.com">
+					<svg viewBox="0 0 18 18" aria-hidden="true"><rect x="2.3" y="4" width="13.4" height="10" rx=".5" /><path d="m3 5 6 4.8L15 5" /></svg>
+					<span>info@optimworks.com</span>
+				</a>
+				<a class="ow-footer__contact-link" href="<?php echo esc_url( home_url( '/contact#form' ) ); ?>">
+					<svg viewBox="0 0 18 18" aria-hidden="true"><path d="M10 3h5v5M15 3 8 10" /><path d="M14 10v4.5H3.5V4H8" /></svg>
+					<span>Request an Audit</span>
+				</a>
+				<a class="ow-footer__contact-link" href="<?php echo esc_url( home_url( '/contact#pilot' ) ); ?>">
+					<svg viewBox="0 0 18 18" aria-hidden="true"><rect x="3" y="4" width="12" height="11" rx=".7" /><path d="M6 2.5v3M12 2.5v3M3 7h12" /></svg>
+					<span>Pilot Week</span>
+				</a>
 			</div>
 		</div>
-		<div class="fgrid">
-			<?php foreach ( $ow_cols as $ow_col ) : ?>
-				<div class="fcol<?php echo ! empty( $ow_col['split'] ) ? ' fcol--split' : ''; ?>">
-					<h5>
-						<span class="ofx-ico"><?php echo ow_icon( $ow_col['icon'] ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
-						<?php echo esc_html( $ow_col['title'] ); ?>
-					</h5>
-					<div class="fsplit">
-						<?php foreach ( $ow_footer_lists( $ow_col ) as $ow_list ) : ?>
-							<ul>
-								<?php foreach ( $ow_list as $ow_link ) : ?>
-									<li>
-										<a
-											href="<?php echo esc_url( ( 0 === strpos( $ow_link['href'], 'mailto:' ) || 0 === strpos( $ow_link['href'], 'http' ) ) ? $ow_link['href'] : home_url( $ow_link['href'] ) ); ?>"
-											<?php echo ! empty( $ow_link['soc'] ) ? 'target="_blank" rel="noreferrer"' : ''; ?>
-										>
-											<span><?php echo esc_html( $ow_link['label'] ); ?></span>
-											<?php if ( ! empty( $ow_link['soc'] ) ) : ?>
-												<?php echo ow_icon( 'i-in' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-											<?php else : ?>
-												<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6" /></svg>
-											<?php endif; ?>
-										</a>
-									</li>
-								<?php endforeach; ?>
-							</ul>
-						<?php endforeach; ?>
-					</div>
-				</div>
-			<?php endforeach; ?>
+
+		<div class="ow-footer__brand-row">
+			<a class="ow-footer__brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Optimworks home">
+				<span class="ow-footer__mark" aria-hidden="true"><i></i><i></i></span>
+				<span>Optimworks</span>
+			</a>
+			<span class="ow-footer__brand-divider" aria-hidden="true"></span>
+			<p class="ow-footer__tagline">Software Testing &amp; Quality Engineering<br />for Modern Enterprises.</p>
+			<div class="ow-footer__social">
+				<span>Follow us on</span>
+				<a href="<?php echo esc_url( $ow_footer_linkedin ); ?>" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+					<svg viewBox="0 0 20 20" aria-hidden="true"><rect x="2.2" y="2.2" width="15.6" height="15.6" rx="1.8" /><path d="M6 8.2v5.5M6 5.7v.1M9.2 13.7V8.2h2.1v.9c.5-.8 1.2-1.1 2-1.1 1.6 0 2.5 1 2.5 2.9v2.8" /></svg>
+				</a>
+			</div>
 		</div>
-		<div class="fbot">
-			<p class="fquote">
-				<?php foreach ( $ow_stats as $ow_si => $ow_stat ) : ?>
-					<span>
-						<?php if ( $ow_si > 0 ) : ?>
-							<i aria-hidden="true"> · </i>
-						<?php endif; ?>
-						<b><?php echo esc_html( $ow_stat[0] ); ?></b> <?php echo esc_html( $ow_stat[1] ); ?>
-					</span>
-				<?php endforeach; ?>
-			</p>
-			<nav class="ofx-legal" aria-label="Legal">
-				<a href="<?php echo esc_url( home_url( '/privacy' ) ); ?>">Privacy</a>
+
+		<div class="ow-footer__legal-row">
+			<p>© 2026 Optimworks Technologies Pvt Ltd. All rights reserved.</p>
+			<nav aria-label="Legal">
+				<a href="<?php echo esc_url( home_url( '/privacy' ) ); ?>">Privacy Policy</a>
+				<span aria-hidden="true"></span>
 				<a href="<?php echo esc_url( home_url( '/sitemap' ) ); ?>">Sitemap</a>
 			</nav>
 		</div>
-		<div class="ofx-copy">
-			<span>© <?php echo esc_html( gmdate( 'Y' ) ); ?> Optimworks Technologies Pvt Ltd</span>
-			<span style="font-family: 'JetBrains Mono', monospace">
-				Innovative • Optimized • Reliable
-			</span>
-		</div>
 	</div>
+	<img class="ow-footer__waves" src="<?php echo esc_url( $ow_footer_waves ); ?>" alt="" aria-hidden="true" />
 </footer>
