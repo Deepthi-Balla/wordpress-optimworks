@@ -2060,6 +2060,9 @@ html[data-theme="dark"] .ac-page { --ac-mesh-a:radial-gradient(120% 90% at 0% 0%
   letter-spacing: -.45px;
 }
 .ow-aitc-design-system .ow-problem__item h3 { font-weight: 700; }
+.ow-aitc-design-system .ow-problem__icon svg { stroke-width: 3.8; }
+.ow-aitc-design-system .ow-scope__icon svg,
+.ow-aitc-design-system .ow-ownership__icon svg { stroke-width: 3.8; }
 .ow-aitc-design-system .ow-scope__step h3 { max-width: none; }
 .ow-aitc-design-system .ow-tools__panel h3 { white-space: normal; }
 .ow-aitc-design-system .ow-tools__tool-name { white-space: normal; }

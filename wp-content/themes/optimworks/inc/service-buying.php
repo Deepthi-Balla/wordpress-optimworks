@@ -339,7 +339,7 @@ function ow_render_service_buying_page( $p ) {
 						<p class="ow-aitc-hero-description">Accelerate test case creation with AI, engineered for accuracy, coverage and review-ready quality.</p>
 						<div class="ow-aitc-hero-actions">
 							<a class="ow-aitc-hero-button ow-aitc-hero-button--primary" href="<?php echo esc_url( ow_home( '/contact#form' ) ); ?>">Talk to an Expert <span aria-hidden="true">→</span></a>
-							<span class="ow-aitc-hero-button ow-aitc-hero-button--secondary">Download Brochure <span aria-hidden="true">↓</span></span>
+							<a class="ow-aitc-hero-button ow-aitc-hero-button--secondary" href="#<?php echo esc_attr( isset( $p['scopeId'] ) ? $p['scopeId'] : '' ); ?>"><?php echo esc_html( $ghost_cta ); ?> <span aria-hidden="true">↓</span></a>
 						</div>
 					</div>
 				</div>

@@ -56,7 +56,8 @@ $ow_footer_columns = array(
 	),
 );
 $ow_footer_waves = get_template_directory_uri() . '/assets/images/optimworks-footer-waves.svg';
-$ow_footer_linkedin = 'https://www.linkedin.com/company/optimworks';
+$ow_footer_logo = get_template_directory_uri() . '/assets/logos/logo-light-bg.png';
+$ow_footer_linkedin = 'https://www.linkedin.com/company/optimworks-ior/home/';
 ?>
 <footer class="ow-footer">
 	<div class="ow-footer__inner">
@@ -92,8 +93,7 @@ $ow_footer_linkedin = 'https://www.linkedin.com/company/optimworks';
 
 		<div class="ow-footer__brand-row">
 			<a class="ow-footer__brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" aria-label="Optimworks home">
-				<span class="ow-footer__mark" aria-hidden="true"><i></i><i></i></span>
-				<span>Optimworks</span>
+				<img src="<?php echo esc_url( $ow_footer_logo ); ?>" alt="Optimworks" />
 			</a>
 			<span class="ow-footer__brand-divider" aria-hidden="true"></span>
 			<p class="ow-footer__tagline">Software Testing &amp; Quality Engineering<br />for Modern Enterprises.</p>
