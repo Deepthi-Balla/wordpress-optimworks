@@ -330,12 +330,18 @@ function ow_render_service_buying_page( $p ) {
 	?>
 	<div class="service-page fr-enterprise au-enterprise ac-page<?php echo $is_aitc_page ? ' ow-aitc-design-system' : ''; ?>">
 		<?php if ( $is_aitc_page ) : ?>
-			<section class="fr-hero ow-aitc-hero" aria-label="AI-Assisted Test Case Generation">
-				<div class="wrap">
-					<figure class="ow-aitc-hero-art">
-						<img class="ow-aitc-hero-image" src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/ai-assisted-test-case-generation-hero.png' ); ?>" alt="AI-assisted test case generation. Accelerate test case creation with AI, engineered for accuracy, coverage and review-ready quality. Talk to an Expert or Download Brochure." width="1774" height="886" fetchpriority="high" />
-						<a class="ow-aitc-hero-contact" href="<?php echo esc_url( ow_home( '/contact#form' ) ); ?>" aria-label="Talk to an Expert"></a>
-					</figure>
+			<section class="fr-hero ow-aitc-hero" aria-labelledby="ow-aitc-hero-title">
+				<div class="ow-aitc-hero-art" aria-hidden="true"></div>
+				<div class="ow-aitc-hero__inner">
+					<div class="ow-aitc-hero-copy">
+						<p class="ow-aitc-hero-eyebrow">SERVICES</p>
+						<h1 id="ow-aitc-hero-title">AI-Assisted<br><span>Test Case</span><br>Generation</h1>
+						<p class="ow-aitc-hero-description">Accelerate test case creation with AI, engineered for accuracy, coverage and review-ready quality.</p>
+						<div class="ow-aitc-hero-actions">
+							<a class="ow-aitc-hero-button ow-aitc-hero-button--primary" href="<?php echo esc_url( ow_home( '/contact#form' ) ); ?>">Talk to an Expert <span aria-hidden="true">→</span></a>
+							<span class="ow-aitc-hero-button ow-aitc-hero-button--secondary">Download Brochure <span aria-hidden="true">↓</span></span>
+						</div>
+					</div>
 				</div>
 			</section>
 		<?php else : ?>
@@ -458,7 +464,6 @@ function ow_render_service_buying_page( $p ) {
 
 		<?php if ( $is_aitc_page ) : ?>
 			<section class="ow-scope" id="<?php echo esc_attr( isset( $p['scopeId'] ) ? $p['scopeId'] : '' ); ?>" aria-labelledby="ow-scope-title">
-				<div class="ow-scope__art" aria-hidden="true"></div>
 				<div class="ow-scope__content">
 					<header class="ow-scope__header">
 						<p class="ow-scope__eyebrow">02 · WHAT WE COVER</p>
