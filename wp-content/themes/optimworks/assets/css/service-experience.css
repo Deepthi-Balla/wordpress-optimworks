@@ -1844,3 +1844,231 @@ html[data-theme="dark"] .ac-page { --ac-mesh-a:radial-gradient(120% 90% at 0% 0%
   .ow-pilot__button { width: min(100%, 330px); min-height: 58px; font-size: 17px; border-radius: 10px; }
   .ow-pilot__secondary { font-size: 15px; }
 }
+
+/* AITC page rhythm: match Section 05 across the supplied section designs. */
+.ow-aitc-design-system {
+  --ow-ac-content-width: calc(100% - 7.1%);
+  --ow-ac-section-top: 66px;
+  --ow-ac-section-bottom: 70px;
+  --ow-ac-eyebrow-size: 22px;
+  --ow-ac-title-size: clamp(34px, 3.05vw, 56px);
+  --ow-ac-description-size: clamp(15px, 1.18vw, 23px);
+  --ow-ac-card-title-size: clamp(25px, 2.1vw, 42px);
+  --ow-ac-card-subtitle-size: clamp(16px, 1.35vw, 25px);
+  --ow-ac-card-body-size: clamp(14px, 1.12vw, 22px);
+}
+
+/* Section 05 defines these page-wide type roles and desktop section edges. */
+.ow-aitc-design-system .ow-evidence {
+  padding-top: var(--ow-ac-section-top);
+  padding-right: 3.55%;
+  padding-bottom: var(--ow-ac-section-bottom);
+  padding-left: 3.55%;
+}
+.ow-aitc-design-system .ow-aitc-hero.fr-hero { padding: var(--ow-ac-section-top) 0 var(--ow-ac-section-bottom); }
+.ow-aitc-design-system .ow-aitc-hero .wrap {
+  width: var(--ow-ac-content-width);
+  max-width: none;
+  padding-right: 0;
+  padding-left: 0;
+}
+.ow-aitc-design-system .ow-problem__inner.wrap {
+  width: var(--ow-ac-content-width);
+  max-width: none;
+  min-height: 0;
+  padding-top: var(--ow-ac-section-top);
+  padding-bottom: var(--ow-ac-section-bottom);
+}
+.ow-aitc-design-system .ow-scope { min-height: 0; }
+.ow-aitc-design-system .ow-scope__content {
+  width: var(--ow-ac-content-width);
+  max-width: none;
+  padding-top: var(--ow-ac-section-top);
+  padding-bottom: var(--ow-ac-section-bottom);
+}
+.ow-aitc-design-system .ow-delivery.band {
+  min-height: 0;
+  padding-top: var(--ow-ac-section-top);
+  padding-bottom: var(--ow-ac-section-bottom);
+}
+.ow-aitc-design-system .ow-delivery__intro,
+.ow-aitc-design-system .ow-delivery__card {
+  width: var(--ow-ac-content-width);
+  max-width: none;
+}
+.ow-aitc-design-system .ow-delivery__card { margin-top: 80px; }
+.ow-aitc-design-system .ow-ownership.band { min-height: 682px; padding: 0; }
+.ow-aitc-design-system .ow-ownership__dark-panel { bottom: var(--ow-ac-section-bottom); }
+.ow-aitc-design-system .ow-ownership__left { padding: var(--ow-ac-section-top) 0 var(--ow-ac-section-bottom) 3.55%; }
+.ow-aitc-design-system .ow-ownership__right { padding-top: var(--ow-ac-section-top); padding-right: 3.55%; }
+.ow-aitc-design-system .ow-tools { padding: var(--ow-ac-section-top) 3.55% var(--ow-ac-section-bottom); }
+.ow-aitc-design-system .ow-tools__intro { max-width: 58%; }
+.ow-aitc-design-system .ow-tools__workflow { margin: 80px 0 0; }
+.ow-aitc-design-system .ow-engagement { min-height: 0; }
+.ow-aitc-design-system .ow-engagement__inner {
+  width: var(--ow-ac-content-width);
+  max-width: none;
+  padding-top: var(--ow-ac-section-top);
+  padding-bottom: var(--ow-ac-section-bottom);
+}
+.ow-aitc-design-system .ow-engagement__eyebrow,
+.ow-aitc-design-system .ow-engagement__title { margin-left: 0; }
+.ow-aitc-design-system .ow-engagement__title { margin-bottom: 80px; }
+.ow-aitc-design-system .ow-faq { min-height: 0; }
+.ow-aitc-design-system .ow-faq__layout {
+  width: var(--ow-ac-content-width);
+  max-width: none;
+  padding-top: var(--ow-ac-section-top);
+  padding-bottom: var(--ow-ac-section-bottom);
+}
+.ow-aitc-design-system .ow-pilot { min-height: 0; }
+.ow-aitc-design-system .ow-pilot__inner {
+  width: var(--ow-ac-content-width);
+  max-width: none;
+  min-height: 682px;
+  padding-top: var(--ow-ac-section-top);
+  padding-bottom: var(--ow-ac-section-bottom);
+}
+
+/* Shared section eyebrow, heading and body styles; section colours stay intact. */
+.ow-aitc-design-system .ow-problem__eyebrow,
+.ow-aitc-design-system .ow-scope__eyebrow,
+.ow-aitc-design-system .ow-delivery__eyebrow,
+.ow-aitc-design-system .ow-ownership__eyebrow,
+.ow-aitc-design-system .ow-tools__eyebrow,
+.ow-aitc-design-system .ow-engagement__eyebrow,
+.ow-aitc-design-system .ow-faq__eyebrow,
+.ow-aitc-design-system .ow-pilot__eyebrow {
+  margin-bottom: 18px;
+  font-family: "Inter", sans-serif;
+  font-size: var(--ow-ac-eyebrow-size);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: .15px;
+}
+.ow-aitc-design-system .ow-problem__intro h2,
+.ow-aitc-design-system .ow-scope__header h2,
+.ow-aitc-design-system .ow-delivery__intro h2,
+.ow-aitc-design-system .ow-ownership__left h2,
+.ow-aitc-design-system .ow-tools__intro h2,
+.ow-aitc-design-system .ow-engagement__title,
+.ow-aitc-design-system .ow-faq__title,
+.ow-aitc-design-system .ow-pilot__title {
+  font-family: "Sora", sans-serif;
+  font-size: var(--ow-ac-title-size);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -1.8px;
+}
+.ow-aitc-design-system .ow-problem__description,
+.ow-aitc-design-system .ow-scope__description,
+.ow-aitc-design-system .ow-delivery__description,
+.ow-aitc-design-system .ow-ownership__description,
+.ow-aitc-design-system .ow-tools__description,
+.ow-aitc-design-system .ow-engagement-card__description,
+.ow-aitc-design-system .ow-faq-item__answer,
+.ow-aitc-design-system .ow-pilot__description {
+  font-family: "Inter", sans-serif;
+  font-size: var(--ow-ac-description-size);
+  font-weight: 400;
+  line-height: 1.48;
+  letter-spacing: -.1px;
+}
+.ow-aitc-design-system .ow-problem__description { max-width: 48ch; margin-top: 14px; }
+.ow-aitc-design-system .ow-scope__description { max-width: 75ch; margin-top: 14px; }
+.ow-aitc-design-system .ow-delivery__description,
+.ow-aitc-design-system .ow-tools__description,
+.ow-aitc-design-system .ow-pilot__description { margin-top: 14px; }
+.ow-aitc-design-system .ow-ownership__description { margin-top: 16px; }
+
+/* Card titles and supporting text follow Section 05's hierarchy. */
+.ow-aitc-design-system .ow-evidence__card h3 {
+  font-size: var(--ow-ac-card-title-size);
+  line-height: 1.1;
+}
+.ow-aitc-design-system .ow-evidence__card h4,
+.ow-aitc-design-system .ow-problem__item h3,
+.ow-aitc-design-system .ow-scope__step h3,
+.ow-aitc-design-system .ow-delivery__phase h3,
+.ow-aitc-design-system .ow-ownership__principle,
+.ow-aitc-design-system .ow-ownership__copy h3,
+.ow-aitc-design-system .ow-tools__panel h3,
+.ow-aitc-design-system .ow-tools__tool-name,
+.ow-aitc-design-system .ow-tools__testrail strong,
+.ow-aitc-design-system .ow-engagement-card h2,
+.ow-aitc-design-system .ow-faq-item__question {
+  font-family: "Sora", sans-serif;
+  font-size: var(--ow-ac-card-subtitle-size);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.45px;
+}
+.ow-aitc-design-system .ow-problem__item h3 { font-weight: 700; }
+.ow-aitc-design-system .ow-scope__step h3 { max-width: none; }
+.ow-aitc-design-system .ow-tools__panel h3 { white-space: normal; }
+.ow-aitc-design-system .ow-tools__tool-name { white-space: normal; }
+.ow-aitc-design-system .ow-tools__testrail strong { font-size: var(--ow-ac-card-title-size); }
+.ow-aitc-design-system .ow-engagement-card__description,
+.ow-aitc-design-system .ow-faq-item__answer { font-size: var(--ow-ac-card-body-size); line-height: 1.42; }
+.ow-aitc-design-system .ow-delivery__phase p,
+.ow-aitc-design-system .ow-ownership__copy p,
+.ow-aitc-design-system .ow-evidence__card p { font-size: var(--ow-ac-card-body-size); line-height: 1.42; }
+.ow-aitc-design-system .ow-delivery__output strong { font-size: var(--ow-ac-card-subtitle-size); }
+.ow-aitc-design-system .ow-problem__item { min-height: 82px; align-items: center; }
+.ow-aitc-design-system .ow-ownership__item { min-height: 0; padding-top: 20px; padding-bottom: 20px; }
+.ow-aitc-design-system .ow-ownership__principle { font-size: var(--ow-ac-card-title-size); }
+.ow-aitc-design-system .ow-engagement-card h2 { margin-top: 16px; font-size: var(--ow-ac-card-title-size); }
+.ow-aitc-design-system .ow-faq-item__question { font-size: var(--ow-ac-card-subtitle-size); }
+
+@media (max-width: 1100px) {
+  .ow-aitc-design-system .ow-delivery__intro,
+  .ow-aitc-design-system .ow-delivery__card { width: var(--ow-ac-content-width); }
+  .ow-aitc-design-system .ow-tools__intro { max-width: 68%; }
+  .ow-aitc-design-system .ow-tools__workflow { margin-top: 80px; }
+  .ow-aitc-design-system .ow-ownership.band { min-height: 0; }
+  .ow-aitc-design-system .ow-ownership__left { padding-left: 3.55%; }
+  .ow-aitc-design-system .ow-ownership__right { padding-right: 3.55%; }
+  .ow-aitc-design-system .ow-pilot__inner { width: var(--ow-ac-content-width); min-height: 600px; }
+}
+@media (max-width: 700px) {
+  .ow-aitc-design-system {
+    --ow-ac-content-width: calc(100% - 44px);
+    --ow-ac-section-top: 38px;
+    --ow-ac-section-bottom: 42px;
+    --ow-ac-eyebrow-size: 12px;
+    --ow-ac-title-size: clamp(29px, 8vw, 38px);
+    --ow-ac-description-size: 14px;
+    --ow-ac-card-title-size: 26px;
+    --ow-ac-card-subtitle-size: 16px;
+    --ow-ac-card-body-size: 14px;
+  }
+  .ow-aitc-design-system .ow-aitc-hero.fr-hero { padding: var(--ow-ac-section-top) 0 var(--ow-ac-section-bottom); }
+  .ow-aitc-design-system .ow-problem__inner.wrap { padding-bottom: 190px; }
+  .ow-aitc-design-system .ow-scope__content { padding-bottom: var(--ow-ac-section-bottom); }
+  .ow-aitc-design-system .ow-delivery.band { padding: var(--ow-ac-section-top) 0 var(--ow-ac-section-bottom); }
+  .ow-aitc-design-system .ow-delivery__card { margin-top: 38px; }
+  .ow-aitc-design-system .ow-ownership.band { min-height: 0; }
+  .ow-aitc-design-system .ow-ownership__dark-panel { height: 500px; bottom: auto; }
+  .ow-aitc-design-system .ow-ownership__left { padding: var(--ow-ac-section-top) 22px 42px; }
+  .ow-aitc-design-system .ow-ownership__right { padding: 14px 22px 25px; }
+  .ow-aitc-design-system .ow-ownership__principle { font-size: 22px; }
+  .ow-aitc-design-system .ow-ownership__item { min-height: 0; padding: 16px 0; }
+  .ow-aitc-design-system .ow-tools { padding: var(--ow-ac-section-top) 22px var(--ow-ac-section-bottom); }
+  .ow-aitc-design-system .ow-tools__workflow { margin-top: 38px; }
+  .ow-aitc-design-system .ow-engagement__inner { width: var(--ow-ac-content-width); padding: var(--ow-ac-section-top) 0 var(--ow-ac-section-bottom); }
+  .ow-aitc-design-system .ow-engagement__title { margin-bottom: 38px; }
+  .ow-aitc-design-system .ow-engagement-card h2 { font-size: 22px; }
+  .ow-aitc-design-system .ow-faq__layout { width: var(--ow-ac-content-width); padding: var(--ow-ac-section-top) 0 var(--ow-ac-section-bottom); }
+  .ow-aitc-design-system .ow-faq__intro { min-height: 250px; }
+  .ow-aitc-design-system .ow-faq__title { white-space: normal; }
+  .ow-aitc-design-system .ow-faq-item__question { font-size: 16px; }
+  .ow-aitc-design-system .ow-pilot__inner { width: var(--ow-ac-content-width); min-height: 0; padding: var(--ow-ac-section-top) 0 var(--ow-ac-section-bottom); }
+  .ow-aitc-design-system .ow-problem__description,
+  .ow-aitc-design-system .ow-scope__description,
+  .ow-aitc-design-system .ow-delivery__description,
+  .ow-aitc-design-system .ow-ownership__description,
+  .ow-aitc-design-system .ow-tools__description,
+  .ow-aitc-design-system .ow-engagement-card__description,
+  .ow-aitc-design-system .ow-faq-item__answer,
+  .ow-aitc-design-system .ow-pilot__description { font-size: var(--ow-ac-description-size); line-height: 1.48; }
+}

@@ -328,7 +328,7 @@ function ow_render_service_buying_page( $p ) {
 	ow_service_frame_start();
 	$is_aitc_page = isset( $GLOBALS['post']->post_name ) && 'ai-assisted-test-case-generation' === $GLOBALS['post']->post_name;
 	?>
-	<div class="service-page fr-enterprise au-enterprise ac-page">
+	<div class="service-page fr-enterprise au-enterprise ac-page<?php echo $is_aitc_page ? ' ow-aitc-design-system' : ''; ?>">
 		<?php if ( $is_aitc_page ) : ?>
 			<section class="fr-hero ow-aitc-hero" aria-label="AI-Assisted Test Case Generation">
 				<div class="wrap">
