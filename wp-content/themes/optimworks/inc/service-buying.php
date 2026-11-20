@@ -463,7 +463,7 @@ function ow_render_service_buying_page( $p ) {
 					<header class="ow-scope__header">
 						<p class="ow-scope__eyebrow">02 · WHAT WE COVER</p>
 						<h2 id="ow-scope-title">Scope and <span>deliverables</span></h2>
-						<p class="ow-scope__description">We deliver engineered reviewed test cases and traceability. Functional Testing<br class="ow-scope__desktop-break"> remains responsible for execution journeys and Automation Testing remains<br class="ow-scope__desktop-break"> responsible for repeatable execution.</p>
+						<p class="ow-scope__description">We deliver engineered reviewed test cases and traceability. Functional Testing remains responsible for execution journeys and Automation Testing remains responsible for repeatable execution.</p>
 					</header>
 					<div class="ow-scope__steps" aria-label="Scope and deliverables">
 						<article class="ow-scope__step">
